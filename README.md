@@ -18,3 +18,28 @@ Since this project has been integrated with LookKit SDK SPM now, please check th
 Make sure you have the LookKit_Package in you project tree.
 
 ![Screenshot](package.png)
+
+2. Update the package
+
+Go to File -> Swift Package -> Update to Latest Package Versions
+
+3. Make sure you have enough photos with people on your traget (Simulator/iDevice).
+
+
+# Feedback
+
+We’d love to hear your feedback for this demo.
+
+When you meet any problems of using this demo. At a minimum please let us know:
+
+- Which iOS Device and iOS version you are using?
+- A short description of your problem includes debug logs or screenshots.
+- Any bugs or typos you come across.
+
+# Contact us
+
+You can always reach us at lalabsproducts@gmail.com
+
+# License
+
+LookKit SDK Face Grouping Demo is available under the MIT license. Please see the LICENSE file for more info.
