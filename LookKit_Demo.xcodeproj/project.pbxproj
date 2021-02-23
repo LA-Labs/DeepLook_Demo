@@ -3,27 +3,38 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		543FCFE525E43F3F00EFB981 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543FCFE425E43F3F00EFB981 /* AppDelegate.swift */; };
 		543FCFE725E43F3F00EFB981 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543FCFE625E43F3F00EFB981 /* SceneDelegate.swift */; };
-		543FCFE925E43F3F00EFB981 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543FCFE825E43F3F00EFB981 /* ViewController.swift */; };
 		543FCFEC25E43F3F00EFB981 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 543FCFEA25E43F3F00EFB981 /* Main.storyboard */; };
 		543FCFEE25E43F4200EFB981 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 543FCFED25E43F4200EFB981 /* Assets.xcassets */; };
 		543FCFF125E43F4200EFB981 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 543FCFEF25E43F4200EFB981 /* LaunchScreen.storyboard */; };
+		545E919625E4F88800D86990 /* LookKitSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 545E919525E4F88800D86990 /* LookKitSDK */; };
+		545E922E25E51B0E00D86990 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E922C25E51B0E00D86990 /* ViewController.swift */; };
+		545E922F25E51B0E00D86990 /* LookKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E922D25E51B0E00D86990 /* LookKitService.swift */; };
+		545E923625E51B1F00D86990 /* HeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545E923225E51B1E00D86990 /* HeaderCollectionReusableView.xib */; };
+		545E923725E51B1F00D86990 /* FaceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545E923325E51B1E00D86990 /* FaceCollectionViewCell.xib */; };
+		545E923825E51B1F00D86990 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E923425E51B1E00D86990 /* HeaderCollectionReusableView.swift */; };
+		545E923925E51B1F00D86990 /* FaceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E923525E51B1E00D86990 /* FaceCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		543FCFE125E43F3F00EFB981 /* LookKit_Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LookKit_Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		543FCFE425E43F3F00EFB981 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		543FCFE625E43F3F00EFB981 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		543FCFE825E43F3F00EFB981 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		543FCFEB25E43F3F00EFB981 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		543FCFED25E43F4200EFB981 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		543FCFF025E43F4200EFB981 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		543FCFF225E43F4200EFB981 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		545E922C25E51B0E00D86990 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		545E922D25E51B0E00D86990 /* LookKitService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LookKitService.swift; sourceTree = "<group>"; };
+		545E923225E51B1E00D86990 /* HeaderCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderCollectionReusableView.xib; sourceTree = "<group>"; };
+		545E923325E51B1E00D86990 /* FaceCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FaceCollectionViewCell.xib; sourceTree = "<group>"; };
+		545E923425E51B1E00D86990 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		545E923525E51B1E00D86990 /* FaceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				545E919625E4F88800D86990 /* LookKitSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +68,28 @@
 		543FCFE325E43F3F00EFB981 /* LookKit_Demo */ = {
 			isa = PBXGroup;
 			children = (
+				545E923125E51B1E00D86990 /* View */,
 				543FCFE425E43F3F00EFB981 /* AppDelegate.swift */,
 				543FCFE625E43F3F00EFB981 /* SceneDelegate.swift */,
-				543FCFE825E43F3F00EFB981 /* ViewController.swift */,
+				545E922D25E51B0E00D86990 /* LookKitService.swift */,
+				545E922C25E51B0E00D86990 /* ViewController.swift */,
 				543FCFEA25E43F3F00EFB981 /* Main.storyboard */,
 				543FCFED25E43F4200EFB981 /* Assets.xcassets */,
 				543FCFEF25E43F4200EFB981 /* LaunchScreen.storyboard */,
 				543FCFF225E43F4200EFB981 /* Info.plist */,
 			);
 			path = LookKit_Demo;
+			sourceTree = "<group>";
+		};
+		545E923125E51B1E00D86990 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				545E923225E51B1E00D86990 /* HeaderCollectionReusableView.xib */,
+				545E923325E51B1E00D86990 /* FaceCollectionViewCell.xib */,
+				545E923425E51B1E00D86990 /* HeaderCollectionReusableView.swift */,
+				545E923525E51B1E00D86990 /* FaceCollectionViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +108,9 @@
 			dependencies = (
 			);
 			name = LookKit_Demo;
+			packageProductDependencies = (
+				545E919525E4F88800D86990 /* LookKitSDK */,
+			);
 			productName = LookKit_Demo;
 			productReference = 543FCFE125E43F3F00EFB981 /* LookKit_Demo.app */;
 			productType = "com.apple.product-type.application";
@@ -110,6 +138,9 @@
 				Base,
 			);
 			mainGroup = 543FCFD825E43F3F00EFB981;
+			packageReferences = (
+				545E919425E4F88800D86990 /* XCRemoteSwiftPackageReference "LookKit_Package" */,
+			);
 			productRefGroup = 543FCFE225E43F3F00EFB981 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -124,9 +155,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				545E923625E51B1F00D86990 /* HeaderCollectionReusableView.xib in Resources */,
 				543FCFF125E43F4200EFB981 /* LaunchScreen.storyboard in Resources */,
 				543FCFEE25E43F4200EFB981 /* Assets.xcassets in Resources */,
 				543FCFEC25E43F3F00EFB981 /* Main.storyboard in Resources */,
+				545E923725E51B1F00D86990 /* FaceCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +170,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				543FCFE925E43F3F00EFB981 /* ViewController.swift in Sources */,
+				545E922E25E51B0E00D86990 /* ViewController.swift in Sources */,
+				545E923925E51B1F00D86990 /* FaceCollectionViewCell.swift in Sources */,
+				545E922F25E51B0E00D86990 /* LookKitService.swift in Sources */,
 				543FCFE525E43F3F00EFB981 /* AppDelegate.swift in Sources */,
+				545E923825E51B1F00D86990 /* HeaderCollectionReusableView.swift in Sources */,
 				543FCFE725E43F3F00EFB981 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,6 +325,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 75F94K2BEH;
 				INFOPLIST_FILE = LookKit_Demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,6 +345,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 75F94K2BEH;
 				INFOPLIST_FILE = LookKit_Demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -341,6 +379,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		545E919425E4F88800D86990 /* XCRemoteSwiftPackageReference "LookKit_Package" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/LA-Labs/LookKit_Package.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		545E919525E4F88800D86990 /* LookKitSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 545E919425E4F88800D86990 /* XCRemoteSwiftPackageReference "LookKit_Package" */;
+			productName = LookKitSDK;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 543FCFD925E43F3F00EFB981 /* Project object */;
 }
