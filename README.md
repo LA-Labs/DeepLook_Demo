@@ -1,6 +1,5 @@
 ![](ezgif.com-resize.gif)
 # LookKit SDK Face Grouping Demo
-Demo project for LookKit SDK
 
 # Introduction
 This LookKit Face Grouping Demo is design for you to gain a basic understanding of the LookKit Mobile SDK. 
