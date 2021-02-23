@@ -1,4 +1,4 @@
-# LookKit_Demo
+# LookKit SDK Face Grouping Demo
 Demo project for LookKit SDK
 
 # Introduction
@@ -14,6 +14,7 @@ It will implement the Face clustering view functionality.
 Since this project has been integrated with LookKit SDK SPM now, please check the following steps to install LookKitSDK.framework using SPM after you downloading this project:
 
 1. Install SPM
+
 Make sure you have the LookKit_Package in you project tree.
 
 ![Screenshot](package.png)
