@@ -1,3 +1,4 @@
+![](ezgif.com-resize.gif)
 # LookKit SDK Face Grouping Demo
 Demo project for LookKit SDK
 
