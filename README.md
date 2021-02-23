@@ -3,7 +3,7 @@ Demo project for LookKit SDK
 
 # Introduction
 This LookKit Face Grouping Demo is design for you to gain a basic understanding of the LookKit Mobile SDK. 
-It will implement the Face clustering view functionality.
+It will implement the Face Clustering functionality.
 
 # Requirements
 - iOS 13.0+
