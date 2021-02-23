@@ -16,7 +16,7 @@ class LookKitService {
         // Fetch Options
         let options = AssetFetchingOptions(sortDescriptors: nil,
                                            assetCollection: .allAssets,
-                                           fetchLimit: 50)
+                                           fetchLimit: 350)
         
         // Cluster Options
         let culsterOptions = ClusterOptions(minimumClusterSize: 2,
