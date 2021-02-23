@@ -2,7 +2,7 @@
 Demo project for LookKit SDK
 
 # Introduction
-This LookKit_Demo is design for you to gain a basic understanding of the LookKit Mobile SDK. 
+This LookKit Face Grouping Demo is design for you to gain a basic understanding of the LookKit Mobile SDK. 
 It will implement the Face clustering view functionality.
 
 # Requirements
