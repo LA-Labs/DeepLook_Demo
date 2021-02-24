@@ -1,4 +1,5 @@
-![](ezgif.com-resize.gif)
+![](ezgif.com-resize.gif) ![Screenshot](fr2.png)
+
 # LookKit SDK Demo
 
 # Introduction
