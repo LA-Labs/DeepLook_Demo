@@ -25,7 +25,7 @@ class LookKitService {
         
         // Start Clustering
         Vision.cluster(fetchOptions: options,
-                       culsterOptions: culsterOptions) { (result) in
+                       culsterOptions: culsterOptions) { [weak self] (result) in
             switch result {
             case .success(let faces):
                 let faces = faces.sorted { (a, b) -> Bool in
@@ -34,9 +34,9 @@ class LookKitService {
                     a.count > b.count
                 }
                 
-                self.faces.send(faces)
+                self?.faces.send(faces)
             case .failure(let error):
-                self.faces.send(completion: .failure(error))
+                self?.faces.send(completion: .failure(error))
             }
         }
     }

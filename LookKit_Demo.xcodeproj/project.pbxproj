@@ -13,12 +13,14 @@
 		543FCFEE25E43F4200EFB981 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 543FCFED25E43F4200EFB981 /* Assets.xcassets */; };
 		543FCFF125E43F4200EFB981 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 543FCFEF25E43F4200EFB981 /* LaunchScreen.storyboard */; };
 		545E919625E4F88800D86990 /* LookKitSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 545E919525E4F88800D86990 /* LookKitSDK */; };
-		545E922E25E51B0E00D86990 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E922C25E51B0E00D86990 /* ViewController.swift */; };
+		545E922E25E51B0E00D86990 /* FaceGroupingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E922C25E51B0E00D86990 /* FaceGroupingViewController.swift */; };
 		545E922F25E51B0E00D86990 /* LookKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E922D25E51B0E00D86990 /* LookKitService.swift */; };
 		545E923625E51B1F00D86990 /* HeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545E923225E51B1E00D86990 /* HeaderCollectionReusableView.xib */; };
 		545E923725E51B1F00D86990 /* FaceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545E923325E51B1E00D86990 /* FaceCollectionViewCell.xib */; };
 		545E923825E51B1F00D86990 /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E923425E51B1E00D86990 /* HeaderCollectionReusableView.swift */; };
 		545E923925E51B1F00D86990 /* FaceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E923525E51B1E00D86990 /* FaceCollectionViewCell.swift */; };
+		545E925125E6E96200D86990 /* ObjectDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E925025E6E96200D86990 /* ObjectDetectionViewController.swift */; };
+		545E925425E6F2D700D86990 /* FaceRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E925325E6F2D700D86990 /* FaceRecognitionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,12 +31,14 @@
 		543FCFED25E43F4200EFB981 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		543FCFF025E43F4200EFB981 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		543FCFF225E43F4200EFB981 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		545E922C25E51B0E00D86990 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		545E922C25E51B0E00D86990 /* FaceGroupingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceGroupingViewController.swift; sourceTree = "<group>"; };
 		545E922D25E51B0E00D86990 /* LookKitService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LookKitService.swift; sourceTree = "<group>"; };
 		545E923225E51B1E00D86990 /* HeaderCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 		545E923325E51B1E00D86990 /* FaceCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FaceCollectionViewCell.xib; sourceTree = "<group>"; };
 		545E923425E51B1E00D86990 /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		545E923525E51B1E00D86990 /* FaceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceCollectionViewCell.swift; sourceTree = "<group>"; };
+		545E925025E6E96200D86990 /* ObjectDetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetectionViewController.swift; sourceTree = "<group>"; };
+		545E925325E6F2D700D86990 /* FaceRecognitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceRecognitionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +76,9 @@
 				543FCFE425E43F3F00EFB981 /* AppDelegate.swift */,
 				543FCFE625E43F3F00EFB981 /* SceneDelegate.swift */,
 				545E922D25E51B0E00D86990 /* LookKitService.swift */,
-				545E922C25E51B0E00D86990 /* ViewController.swift */,
+				545E925025E6E96200D86990 /* ObjectDetectionViewController.swift */,
+				545E925325E6F2D700D86990 /* FaceRecognitionViewController.swift */,
+				545E922C25E51B0E00D86990 /* FaceGroupingViewController.swift */,
 				543FCFEA25E43F3F00EFB981 /* Main.storyboard */,
 				543FCFED25E43F4200EFB981 /* Assets.xcassets */,
 				543FCFEF25E43F4200EFB981 /* LaunchScreen.storyboard */,
@@ -170,10 +176,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				545E922E25E51B0E00D86990 /* ViewController.swift in Sources */,
+				545E922E25E51B0E00D86990 /* FaceGroupingViewController.swift in Sources */,
 				545E923925E51B1F00D86990 /* FaceCollectionViewCell.swift in Sources */,
 				545E922F25E51B0E00D86990 /* LookKitService.swift in Sources */,
 				543FCFE525E43F3F00EFB981 /* AppDelegate.swift in Sources */,
+				545E925125E6E96200D86990 /* ObjectDetectionViewController.swift in Sources */,
+				545E925425E6F2D700D86990 /* FaceRecognitionViewController.swift in Sources */,
 				545E923825E51B1F00D86990 /* HeaderCollectionReusableView.swift in Sources */,
 				543FCFE725E43F3F00EFB981 /* SceneDelegate.swift in Sources */,
 			);

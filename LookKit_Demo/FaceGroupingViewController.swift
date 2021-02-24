@@ -9,7 +9,7 @@ import UIKit
 import Combine
 import LookKit
 
-class ViewController: UIViewController {
+class FaceGroupingViewController: UIViewController {
 
     // Outlet
     @IBOutlet weak var collectionView: UICollectionView!
@@ -23,6 +23,10 @@ class ViewController: UIViewController {
     // Objects
     var faces: [[Face]] = [] {
         didSet { collectionView.reloadData() }
+    }
+    
+    deinit {
+        print("deinit \(self)")
     }
     
     // Lifecycle
@@ -59,7 +63,7 @@ class ViewController: UIViewController {
 }
 
 //MARK: UICollectionViewDataSource & UICollectionViewDelegateFlowLayout
-extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension FaceGroupingViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         faces.count
