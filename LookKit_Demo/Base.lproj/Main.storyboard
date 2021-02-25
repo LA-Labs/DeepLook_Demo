@@ -251,17 +251,61 @@
                     <view key="view" contentMode="scaleToFill" id="BtV-sx-vjo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cat" translatesAutoresizingMaskIntoConstraints="NO" id="6Xw-KG-VIG">
+                                <rect key="frame" x="0.0" y="88" width="414" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="lED-s2-1FW"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="80g-fk-7jW">
+                                <rect key="frame" x="16" y="346" width="289" height="54"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tags:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isR-FK-ViY">
+                                        <rect key="frame" x="0.0" y="0.0" width="77" height="27"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="77" id="HBx-n2-L2V"/>
+                                            <constraint firstAttribute="height" constant="27" id="yU2-Ru-CaZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fM1-RD-jFo">
+                                        <rect key="frame" x="0.0" y="27" width="289" height="27"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="27" id="M8j-ub-fQZ"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="289" id="Y89-Ka-sn7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Nc2-Xf-vLv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Xw-KG-VIG" firstAttribute="leading" secondItem="Nc2-Xf-vLv" secondAttribute="leading" id="8ec-vg-Swu"/>
+                            <constraint firstItem="80g-fk-7jW" firstAttribute="top" secondItem="6Xw-KG-VIG" secondAttribute="bottom" constant="8" symbolic="YES" id="OZN-mp-fmx"/>
+                            <constraint firstItem="6Xw-KG-VIG" firstAttribute="top" secondItem="Nc2-Xf-vLv" secondAttribute="top" id="SId-af-s39"/>
+                            <constraint firstItem="6Xw-KG-VIG" firstAttribute="trailing" secondItem="Nc2-Xf-vLv" secondAttribute="trailing" id="eYo-Tm-JmR"/>
+                            <constraint firstItem="80g-fk-7jW" firstAttribute="leading" secondItem="Nc2-Xf-vLv" secondAttribute="leading" constant="16" id="gSp-He-kYX"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kgo-7M-kzl"/>
+                    <connections>
+                        <outlet property="detectingObject" destination="fM1-RD-jFo" id="AXp-Sd-c9x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kdr-a6-kGk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1190" y="838"/>
+            <point key="canvasLocation" x="1189.8550724637682" y="837.72321428571422"/>
         </scene>
     </scenes>
     <resources>
+        <image name="cat" width="480" height="360"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

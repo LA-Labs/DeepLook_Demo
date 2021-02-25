@@ -10,21 +10,21 @@ import LookKit
 import Combine
 
 class LookKitService {
-    var faces: PassthroughSubject<[[Face]],Error> = .init()
+    var faces: PassthroughSubject<[[Face]], Error> = .init()
     
     func startClustering() {
         // Fetch Options
         let options = AssetFetchingOptions(sortDescriptors: nil,
                                            assetCollection: .allAssets,
-                                           fetchLimit: 350)
+                                           fetchLimit: 200)
         
         // Cluster Options
         let culsterOptions = ClusterOptions(minimumClusterSize: 2,
                                             numberIterations: 100,
-                                            faceSimilarityThreshold: 0.8)
+                                            faceSimilarityThreshold: 0.75)
         
         // Start Clustering
-        Vision.cluster(fetchOptions: options,
+        Recognition.cluster(fetchOptions: options,
                        culsterOptions: culsterOptions) { [weak self] (result) in
             switch result {
             case .success(let faces):

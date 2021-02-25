@@ -24,12 +24,12 @@ class FaceRecognitionViewController: UIViewController {
         face2ImageView.image = face2
         
         // Compare
-        Vision.compareFaces(sourceImage: face1,
+        Recognition.compareFaces(sourceImage: face1,
                             targetImage: face2,
-                            similarityThreshold: 0.7,
+                            similarityThreshold: 0.75,
                             qualityFilter: .medium) { (result) in
             switch result {
-            case .success((let result, _)):
+            case .success((let result, let distance)):
                 self.matchLabel.text = result ? "Match" : "Not Match"
                 self.matchLabel.textColor = result ? .systemGreen : .systemRed
             case .failure(let error):
