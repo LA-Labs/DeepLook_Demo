@@ -1,4 +1,4 @@
-![](ezgif.com-resize.gif) ![Screenshot](fr2.png)
+![](face_grouping.gif) ![Screenshot](fr2.png)
 
 # LookKit SDK Demo
 
