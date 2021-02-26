@@ -8,13 +8,39 @@
 import UIKit
 import LookKit
 
-class ObjectDetectionViewController: UIViewController {
+class ObjectDetectionViewController: UIViewController, UINavigationControllerDelegate {
 
+    @IBOutlet weak var detectableImage: UIImageView!
+    @IBOutlet weak var pickPhotoBtn: UIButton! {
+        didSet { pickPhotoBtn.layer.cornerRadius = 8.0
+        }
+    }
+    
+    @IBAction func pickPhotoDidTap(_ sender: UIButton) {
+        presentPhotoPicker()
+    }
+    
+    func presentPhotoPicker() {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.allowsEditing = false
+        imagePickerController.sourceType = .photoLibrary
+        imagePickerController.delegate = self
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    
     @IBOutlet weak var detectingObject: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let image = UIImage(named: "cat")
-        Detector.detect(VFilter.objectDetecting(), sourceImage: image!) { (result) in
+        detect(image: image!)
+        
+        title = "Object Detecting"
+        // Do any additional setup after loading the view.
+    }
+    
+    func detect(image: UIImage) {
+        Detector.detect(VFilter.objectDetecting(), sourceImage: image) { (result) in
             switch result {
             case .success(let photo):
                 print(photo)
@@ -29,7 +55,21 @@ class ObjectDetectionViewController: UIViewController {
                 break
             }
         }
-        // Do any additional setup after loading the view.
     }
 
+}
+
+extension ObjectDetectionViewController: UIImagePickerControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let tempImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            detect(image: tempImage)
+            detectableImage.image = tempImage
+        }
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
 }

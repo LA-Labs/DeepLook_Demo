@@ -12,6 +12,7 @@ import LookKit
 class FaceGroupingViewController: UIViewController {
 
     // Outlet
+    @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
     // Service
@@ -33,7 +34,7 @@ class FaceGroupingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Face Grouping Demo"
+        self.title = "Face Grouping"
         
         // Collection View
         collectionView.register(UINib(nibName: "FaceCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
@@ -58,6 +59,7 @@ class FaceGroupingViewController: UIViewController {
         } receiveValue: { [weak self]  (faces) in
             // Clustering service just finished and update us with the new faces collection.
             self?.faces = faces
+            self?.progressLabel.isHidden = true
         }.store(in: &binding)
     }
 }

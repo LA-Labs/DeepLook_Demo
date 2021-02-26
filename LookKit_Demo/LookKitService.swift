@@ -16,7 +16,7 @@ class LookKitService {
         // Fetch Options
         let options = AssetFetchingOptions(sortDescriptors: nil,
                                            assetCollection: .allAssets,
-                                           fetchLimit: 200)
+                                           fetchLimit: 150)
         
         // Cluster Options
         let culsterOptions = ClusterOptions(minimumClusterSize: 2,
@@ -25,7 +25,8 @@ class LookKitService {
         
         // Start Clustering
         Recognition.cluster(fetchOptions: options,
-                       culsterOptions: culsterOptions) { [weak self] (result) in
+                            culsterOptions: culsterOptions,
+                            qualityFilter: .low) { [weak self] (result) in
             switch result {
             case .success(let faces):
                 let faces = faces.sorted { (a, b) -> Bool in

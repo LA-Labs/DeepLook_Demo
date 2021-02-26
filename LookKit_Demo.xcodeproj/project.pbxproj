@@ -21,6 +21,7 @@
 		545E923925E51B1F00D86990 /* FaceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E923525E51B1E00D86990 /* FaceCollectionViewCell.swift */; };
 		545E925125E6E96200D86990 /* ObjectDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E925025E6E96200D86990 /* ObjectDetectionViewController.swift */; };
 		545E925425E6F2D700D86990 /* FaceRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E925325E6F2D700D86990 /* FaceRecognitionViewController.swift */; };
+		548899A225E94F3100E480BF /* UIView + Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548899A125E94F3100E480BF /* UIView + Extention.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		545E923525E51B1E00D86990 /* FaceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceCollectionViewCell.swift; sourceTree = "<group>"; };
 		545E925025E6E96200D86990 /* ObjectDetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetectionViewController.swift; sourceTree = "<group>"; };
 		545E925325E6F2D700D86990 /* FaceRecognitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceRecognitionViewController.swift; sourceTree = "<group>"; };
+		548899A125E94F3100E480BF /* UIView + Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extention.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				543FCFED25E43F4200EFB981 /* Assets.xcassets */,
 				543FCFEF25E43F4200EFB981 /* LaunchScreen.storyboard */,
 				543FCFF225E43F4200EFB981 /* Info.plist */,
+				548899A125E94F3100E480BF /* UIView + Extention.swift */,
 			);
 			path = LookKit_Demo;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 				545E923925E51B1F00D86990 /* FaceCollectionViewCell.swift in Sources */,
 				545E922F25E51B0E00D86990 /* LookKitService.swift in Sources */,
 				543FCFE525E43F3F00EFB981 /* AppDelegate.swift in Sources */,
+				548899A225E94F3100E480BF /* UIView + Extention.swift in Sources */,
 				545E925125E6E96200D86990 /* ObjectDetectionViewController.swift in Sources */,
 				545E925425E6F2D700D86990 /* FaceRecognitionViewController.swift in Sources */,
 				545E923825E51B1F00D86990 /* HeaderCollectionReusableView.swift in Sources */,
