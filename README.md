@@ -1,4 +1,4 @@
-![](face_group.gif) ![](face_recognition.gif) 
+![](face_group.gif) ![](face_recognition.gif) ![](object_detection.gif)
 
 # LookKit SDK Demo
 
