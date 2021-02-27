@@ -53,7 +53,8 @@ class FaceRecognitionViewController: UIViewController, UINavigationControllerDel
                                  qualityFilter: .none) { (result) in
             switch result {
             case .success((let result, let distance)):
-                self.matchLabel.text = result ? "Match" : "Not Match"
+                self.matchLabel.text = result ? "Match, \(String(format: "Dist: %.2f", distance))" :
+                    "Not Match, \(String(format: "Dist: %.2f", distance))"
                 self.matchLabel.textColor = result ? .systemGreen : .systemRed
             case .failure(let error):
                 print(error)
