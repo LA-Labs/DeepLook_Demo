@@ -12,7 +12,6 @@
 		543FCFEC25E43F3F00EFB981 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 543FCFEA25E43F3F00EFB981 /* Main.storyboard */; };
 		543FCFEE25E43F4200EFB981 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 543FCFED25E43F4200EFB981 /* Assets.xcassets */; };
 		543FCFF125E43F4200EFB981 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 543FCFEF25E43F4200EFB981 /* LaunchScreen.storyboard */; };
-		545E919625E4F88800D86990 /* LookKitSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 545E919525E4F88800D86990 /* LookKitSDK */; };
 		545E922E25E51B0E00D86990 /* FaceGroupingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E922C25E51B0E00D86990 /* FaceGroupingViewController.swift */; };
 		545E922F25E51B0E00D86990 /* LookKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E922D25E51B0E00D86990 /* LookKitService.swift */; };
 		545E923625E51B1F00D86990 /* HeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545E923225E51B1E00D86990 /* HeaderCollectionReusableView.xib */; };
@@ -22,6 +21,7 @@
 		545E925125E6E96200D86990 /* ObjectDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E925025E6E96200D86990 /* ObjectDetectionViewController.swift */; };
 		545E925425E6F2D700D86990 /* FaceRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E925325E6F2D700D86990 /* FaceRecognitionViewController.swift */; };
 		548899A225E94F3100E480BF /* UIView + Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548899A125E94F3100E480BF /* UIView + Extention.swift */; };
+		54889A1225EBE82A00E480BF /* LookKit in Frameworks */ = {isa = PBXBuildFile; productRef = 54889A1125EBE82A00E480BF /* LookKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,7 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				545E919625E4F88800D86990 /* LookKitSDK in Frameworks */,
+				54889A1225EBE82A00E480BF /* LookKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +60,7 @@
 			children = (
 				543FCFE325E43F3F00EFB981 /* LookKit_Demo */,
 				543FCFE225E43F3F00EFB981 /* Products */,
+				54889A1025EBE82A00E480BF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +102,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		54889A1025EBE82A00E480BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -118,7 +126,7 @@
 			);
 			name = LookKit_Demo;
 			packageProductDependencies = (
-				545E919525E4F88800D86990 /* LookKitSDK */,
+				54889A1125EBE82A00E480BF /* LookKit */,
 			);
 			productName = LookKit_Demo;
 			productReference = 543FCFE125E43F3F00EFB981 /* LookKit_Demo.app */;
@@ -404,10 +412,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		545E919525E4F88800D86990 /* LookKitSDK */ = {
+		54889A1125EBE82A00E480BF /* LookKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 545E919425E4F88800D86990 /* XCRemoteSwiftPackageReference "LookKit_Package" */;
-			productName = LookKitSDK;
+			productName = LookKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

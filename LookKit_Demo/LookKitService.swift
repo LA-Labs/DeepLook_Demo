@@ -16,17 +16,20 @@ class LookKitService {
         // Fetch Options
         let options = AssetFetchingOptions(sortDescriptors: nil,
                                            assetCollection: .allAssets,
-                                           fetchLimit: 150)
+                                           fetchLimit: 200)
         
         // Cluster Options
         let culsterOptions = ClusterOptions(minimumClusterSize: 2,
                                             numberIterations: 100,
                                             faceSimilarityThreshold: 0.75)
         
+        Defaults.shared.drawFeaturePoints = true
+        Defaults.shared.featurePointsAlgorithm = .points5
+        
         // Start Clustering
         Recognition.cluster(fetchOptions: options,
                             culsterOptions: culsterOptions,
-                            qualityFilter: .low) { [weak self] (result) in
+                            qualityFilter: .none) { [weak self] (result) in
             switch result {
             case .success(let faces):
                 let faces = faces.sorted { (a, b) -> Bool in

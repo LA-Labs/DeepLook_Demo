@@ -42,6 +42,15 @@ class FaceGroupingViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         
+        let layout = UICollectionViewFlowLayout()
+        let width = (UIScreen.main.bounds.width-4)/4
+        layout.itemSize = CGSize(width: width, height: width)
+        layout.headerReferenceSize = CGSize(width: UIScreen.main.bounds.width, height: 48)
+        layout.minimumLineSpacing = 1
+        layout.minimumInteritemSpacing = 1
+
+        collectionView.collectionViewLayout = layout
+        collectionView.collectionViewLayout.invalidateLayout()
         
         // Chack user photos authorization using PhotosAuthorizationService.
         PhotosAuthorizationService.checkPhotoLibraryPermission { [weak self]  (result) in
@@ -96,22 +105,4 @@ extension FaceGroupingViewController: UICollectionViewDataSource, UICollectionVi
         headerView.title.text = "Cluster ID: \(indexPath.section)"
         return headerView
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        CGSize(width: collectionView.bounds.width, height: 48)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = (collectionView.frame.width-3)/4
-        return CGSize(width: width, height: width)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        1.0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        1.0
-    }
-
 }
