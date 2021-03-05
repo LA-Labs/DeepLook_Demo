@@ -38,14 +38,12 @@ class FaceGroupingViewController: UIViewController {
         
         // Collection View
         collectionView.register(UINib(nibName: "FaceCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
-        collectionView.register(UINib(nibName: "HeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
         collectionView.dataSource = self
         collectionView.delegate = self
         
         let layout = UICollectionViewFlowLayout()
         let width = (UIScreen.main.bounds.width-4)/4
         layout.itemSize = CGSize(width: width, height: width)
-        layout.headerReferenceSize = CGSize(width: UIScreen.main.bounds.width, height: 48)
         layout.minimumLineSpacing = 1
         layout.minimumInteritemSpacing = 1
 
@@ -71,17 +69,24 @@ class FaceGroupingViewController: UIViewController {
             self?.progressLabel.isHidden = true
         }.store(in: &binding)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let selectedPath = collectionView.indexPathsForSelectedItems?.first else { return }
+        if let target = segue.destination as? FaceGroupingDetailViewController {
+            target.faces = faces[selectedPath.row]
+        }
+    }
 }
 
 //MARK: UICollectionViewDataSource & UICollectionViewDelegateFlowLayout
 extension FaceGroupingViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        faces.count
+        1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        faces.isEmpty ? 0 : faces[section].count
+        faces.count
         
     }
     
@@ -90,7 +95,8 @@ extension FaceGroupingViewController: UICollectionViewDataSource, UICollectionVi
             fatalError()
         }
         DispatchQueue.main.async {
-            cell.faceImageView.image = self.faces[indexPath.section][indexPath.row].faceCroppedImage
+            cell.faceImageView.image = self.faces[indexPath.row][0].faceCroppedImage
+            cell.faceCount.text = "Count: \(self.faces[indexPath.row].count)"
         }
 
         return cell
@@ -104,5 +110,9 @@ extension FaceGroupingViewController: UICollectionViewDataSource, UICollectionVi
         headerView.frame.size.height = 48
         headerView.title.text = "Cluster ID: \(indexPath.section)"
         return headerView
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "selectFaces", sender: nil)
     }
 }

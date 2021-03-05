@@ -9,6 +9,7 @@ import UIKit
 
 class FaceCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var faceCount: UILabel!
     @IBOutlet weak var faceImageView: UIImageView!
     
     override func awakeFromNib() {
@@ -19,5 +20,6 @@ class FaceCollectionViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         faceImageView.image = nil
+        faceCount.text = ""
     }
 }

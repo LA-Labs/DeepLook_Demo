@@ -22,6 +22,7 @@
 		545E925425E6F2D700D86990 /* FaceRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E925325E6F2D700D86990 /* FaceRecognitionViewController.swift */; };
 		548899A225E94F3100E480BF /* UIView + Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548899A125E94F3100E480BF /* UIView + Extention.swift */; };
 		54889A1225EBE82A00E480BF /* LookKit in Frameworks */ = {isa = PBXBuildFile; productRef = 54889A1125EBE82A00E480BF /* LookKit */; };
+		54C7980D25F00C6800EFABB7 /* FaceGroupingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C7980C25F00C6700EFABB7 /* FaceGroupingDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		545E925025E6E96200D86990 /* ObjectDetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetectionViewController.swift; sourceTree = "<group>"; };
 		545E925325E6F2D700D86990 /* FaceRecognitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceRecognitionViewController.swift; sourceTree = "<group>"; };
 		548899A125E94F3100E480BF /* UIView + Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extention.swift"; sourceTree = "<group>"; };
+		54C7980C25F00C6700EFABB7 /* FaceGroupingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceGroupingDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				545E922D25E51B0E00D86990 /* LookKitService.swift */,
 				545E925025E6E96200D86990 /* ObjectDetectionViewController.swift */,
 				545E925325E6F2D700D86990 /* FaceRecognitionViewController.swift */,
+				54C7980C25F00C6700EFABB7 /* FaceGroupingDetailViewController.swift */,
 				545E922C25E51B0E00D86990 /* FaceGroupingViewController.swift */,
 				543FCFEA25E43F3F00EFB981 /* Main.storyboard */,
 				543FCFED25E43F4200EFB981 /* Assets.xcassets */,
@@ -196,6 +199,7 @@
 				545E925425E6F2D700D86990 /* FaceRecognitionViewController.swift in Sources */,
 				545E923825E51B1F00D86990 /* HeaderCollectionReusableView.swift in Sources */,
 				543FCFE725E43F3F00EFB981 /* SceneDelegate.swift in Sources */,
+				54C7980D25F00C6800EFABB7 /* FaceGroupingDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
