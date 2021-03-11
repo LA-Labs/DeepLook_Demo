@@ -43,4 +43,4 @@ You can always reach us at lalabsproducts@gmail.com
 
 # License
 
-LookKit SDK Face Grouping Demo is available under the MIT license. Please see the LICENSE file for more info.
+LookKit SDK Demo is available under the MIT license. Please see the LICENSE file for more info.
