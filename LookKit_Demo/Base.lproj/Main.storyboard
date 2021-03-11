@@ -124,10 +124,10 @@
             </objects>
             <point key="canvasLocation" x="1953.6231884057972" y="-838.39285714285711"/>
         </scene>
-        <!--View Controller-->
+        <!--Face Grouping Face Image View Controller-->
         <scene sceneID="uBS-gx-tXM">
             <objects>
-                <viewController id="daY-db-raR" sceneMemberID="viewController">
+                <viewController id="daY-db-raR" customClass="FaceGroupingFaceImageViewController" customModule="LookKit_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DyO-Um-Xr0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -146,6 +146,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IXy-w1-yR8"/>
+                    <connections>
+                        <outlet property="userImageView" destination="ZrI-7x-MaF" id="OSD-Ft-BHo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V9Y-UZ-k5n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

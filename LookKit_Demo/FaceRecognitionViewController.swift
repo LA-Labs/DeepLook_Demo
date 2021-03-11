@@ -49,8 +49,7 @@ class FaceRecognitionViewController: UIViewController, UINavigationControllerDel
         // Compare
         Recognition.compareFaces(sourceImage: face1ImageView.image!,
                                  targetImage: face2ImageView.image!,
-                                 similarityThreshold: 0.75,
-                                 qualityFilter: .none) { (result) in
+                                 similarityThreshold: 0.8) { (result) in
             switch result {
             case .success((let result, let distance)):
                 self.matchLabel.text = result ? "Match, \(String(format: "Dist: %.2f", distance))" :

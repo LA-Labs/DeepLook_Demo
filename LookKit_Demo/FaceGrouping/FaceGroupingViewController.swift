@@ -40,13 +40,19 @@ class FaceGroupingViewController: UIViewController {
         collectionView.register(UINib(nibName: "FaceCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
         collectionView.dataSource = self
         collectionView.delegate = self
-        
         let layout = UICollectionViewFlowLayout()
-        let width = (UIScreen.main.bounds.width-4)/4
-        layout.itemSize = CGSize(width: width, height: width)
+
+        let width = (UIScreen.main.bounds.width-20)/3
+        #if targetEnvironment(macCatalyst)
+        layout.itemSize = CGSize(width: 195, height: 190 + 35)
+        #else
+        layout.itemSize = CGSize(width: width, height: width + 25)
+        #endif
+
         layout.minimumLineSpacing = 1
         layout.minimumInteritemSpacing = 1
 
+        
         collectionView.collectionViewLayout = layout
         collectionView.collectionViewLayout.invalidateLayout()
         
@@ -96,7 +102,8 @@ extension FaceGroupingViewController: UICollectionViewDataSource, UICollectionVi
         }
         DispatchQueue.main.async {
             cell.faceImageView.image = self.faces[indexPath.row][0].faceCroppedImage
-            cell.faceCount.text = "Count: \(self.faces[indexPath.row].count)"
+            cell.title.text = "\(self.faces[indexPath.row].count) Faces"
+            cell.faceImageView.layer.cornerRadius = ((collectionView.collectionViewLayout as! UICollectionViewFlowLayout).itemSize.width)/2
         }
 
         return cell
@@ -115,4 +122,7 @@ extension FaceGroupingViewController: UICollectionViewDataSource, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "selectFaces", sender: nil)
     }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+            UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        }
 }

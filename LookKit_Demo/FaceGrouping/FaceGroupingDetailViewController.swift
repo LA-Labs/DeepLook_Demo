@@ -23,7 +23,11 @@ class FaceGroupingDetailViewController: UIViewController {
         
         let layout = UICollectionViewFlowLayout()
         let width = (UIScreen.main.bounds.width-4)/4
-        layout.itemSize = CGSize(width: width, height: width)
+        #if targetEnvironment(macCatalyst)
+        layout.itemSize = CGSize(width: 199, height: 190 + 35)
+        #else
+        layout.itemSize = CGSize(width: width, height: width + 25)
+        #endif
         layout.minimumLineSpacing = 1
         layout.minimumInteritemSpacing = 1
 
@@ -31,6 +35,13 @@ class FaceGroupingDetailViewController: UIViewController {
         collectionView.collectionViewLayout.invalidateLayout()
         collectionView.reloadData()
         // Do any additional setup after loading the view.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let selectedPath = collectionView.indexPathsForSelectedItems?.first else { return }
+        if let target = segue.destination as? FaceGroupingFaceImageViewController {
+            target.imageID = faces[selectedPath.row].localIdnetifier
+        }
     }
 
 }
@@ -52,8 +63,13 @@ extension FaceGroupingDetailViewController: UICollectionViewDataSource, UICollec
         }
         DispatchQueue.main.async {
             cell.faceImageView.image = self.faces[indexPath.row].faceCroppedImage
+            cell.title.text = String(format: "Quality: %.2f", self.faces[indexPath.row].quality)
         }
 
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showImage", sender: nil)
     }
 }
