@@ -15,7 +15,7 @@ class LookKitService {
     func startClustering() {
         // Fetch Options
         let options = AssetFetchingOptions(sortDescriptors: nil,
-                                           assetCollection: .albumName("Demo"),
+                                           assetCollection: .allAssets,
                                            fetchLimit: 50)
         
         // Cluster Options
