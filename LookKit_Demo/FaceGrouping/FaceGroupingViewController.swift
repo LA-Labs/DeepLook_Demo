@@ -42,7 +42,7 @@ class FaceGroupingViewController: UIViewController {
         collectionView.delegate = self
         let layout = UICollectionViewFlowLayout()
 
-        let width = (UIScreen.main.bounds.width-20)/3
+        let width = (UIScreen.main.bounds.width-64)/3
         #if targetEnvironment(macCatalyst)
         layout.itemSize = CGSize(width: 195, height: 190 + 35)
         #else
@@ -103,7 +103,7 @@ extension FaceGroupingViewController: UICollectionViewDataSource, UICollectionVi
         DispatchQueue.main.async {
             cell.faceImageView.image = self.faces[indexPath.row][0].faceCroppedImage
             cell.title.text = "\(self.faces[indexPath.row].count) Faces"
-            cell.faceImageView.layer.cornerRadius = ((collectionView.collectionViewLayout as! UICollectionViewFlowLayout).itemSize.width)/2
+            cell.faceImageView.layer.cornerRadius = ((collectionView.collectionViewLayout as! UICollectionViewFlowLayout).itemSize.width - 16)/2
         }
 
         return cell
