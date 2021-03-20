@@ -13,7 +13,8 @@ class FaceGroupingDetailViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var faces: [Face] = []
-    
+    var canSelect: Bool = true
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Collection View
@@ -63,13 +64,15 @@ extension FaceGroupingDetailViewController: UICollectionViewDataSource, UICollec
         }
         DispatchQueue.main.async {
             cell.faceImageView.image = self.faces[indexPath.row].faceCroppedImage
-            cell.title.text = String(format: "Quality: %.2f", self.faces[indexPath.row].quality)
+            cell.title.text = self.faces[indexPath.row].quality > 0.01 ?  String(format: "Quality: %.2f", self.faces[indexPath.row].quality) : ""
         }
 
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showImage", sender: nil)
+        if canSelect {
+            performSegue(withIdentifier: "showImage", sender: nil)
+        }
     }
 }

@@ -16,7 +16,7 @@ class LookKitService {
         // Fetch Options
         let options = AssetFetchingOptions(sortDescriptors: nil,
                                            assetCollection: .allAssets,
-                                           fetchLimit: 50)
+                                           fetchLimit: 100)
         
         // Cluster Options
         let culsterOptions = ClusterOptions(minimumClusterSize: 2,
@@ -24,9 +24,9 @@ class LookKitService {
                                             faceSimilarityThreshold: 0.75)
         
         let processConfiguration = ProcessConfiguration()
-        processConfiguration.qualityFilter = .low
-        processConfiguration.featurePointsAlgorithm = .pointsSphereFace5
-        processConfiguration.facePadding = 0.0
+        processConfiguration.minimumQualityFilter = .medium
+        processConfiguration.landmarksAlignmentAlgorithm = .pointsSphereFace5
+        processConfiguration.faceChipPadding = 0.0
         
         // Start Clustering
         Recognition.cluster(fetchOptions: options,

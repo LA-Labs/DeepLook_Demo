@@ -32,15 +32,17 @@ class ObjectDetectionViewController: UIViewController, UINavigationControllerDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let image = UIImage(named: "cat")
         detect(image: image!)
         
         title = "Object Detecting"
-        // Do any additional setup after loading the view.
     }
     
     func detect(image: UIImage) {
-        Detector.detect(VFilter.objectDetecting(), sourceImage: image) { (result) in
+        
+        let action = Filter.objectDetecting
+        Detector.analyze(action, sourceImage: image) { (result) in
             switch result {
             case .success(let photo):
                 print(photo)

@@ -15,7 +15,7 @@ class FaceGroupingFaceImageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         DispatchQueue.global().async {
-            let image = ImageFetcherService().image(from: self.imageID)
+            let image = ImageFetcherService(options: ImageFetcherOptions()).image(from: self.imageID)
             DispatchQueue.main.async {
                 self.userImageView.image = image
             }
