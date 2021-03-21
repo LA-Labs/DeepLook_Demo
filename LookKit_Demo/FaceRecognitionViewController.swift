@@ -62,21 +62,32 @@ class FaceRecognitionViewController: UIViewController, UINavigationControllerDel
     
     func compare() {
             
+        // Verify configuration
         let processConfig = ProcessConfiguration()
+        
+        // Add 40% padding on the cropped faces chip
         processConfig.faceChipPadding = 0.4
+        
+        // Use Dlib 5 point landmarks to align face
         processConfig.landmarksAlignmentAlgorithm = .pointsDlib5
+        
+        // Use facenet to encode face to 128 vector representation.
         processConfig.faceEncoderModel = .facenet
         
-        // Compare
+        // Verify faces from image A in image B
+        // Result contains all match faces from image A found on image B
         Recognition.verify(sourceImage: face1ImageView.image!,
                            targetImages: face2ImageView.image!,
+                           // maximum threshold
                            similarityThreshold: 0.75,
                            processConfiguration: processConfig) {[weak self] (result) in
             switch result {
             case .success(let result):
-                print(result.count)
+                // Remove all faces
                 self?.verifiedFacesVC?.faces.removeAll()
                 result.forEach { (match) in
+                    
+                    // Append match faces.
                     self?.verifiedFacesVC?.faces.append(match.sourceFace)
                     self?.verifiedFacesVC?.faces.append(match.targetFace)
                     print(match.distance)

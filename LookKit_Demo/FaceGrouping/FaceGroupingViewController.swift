@@ -70,6 +70,7 @@ class FaceGroupingViewController: UIViewController {
         service.faces.sink {(result) in
             
         } receiveValue: { [weak self]  (faces) in
+            
             // Clustering service just finished and update us with the new faces collection.
             self?.faces = faces
             self?.progressLabel.isHidden = true
