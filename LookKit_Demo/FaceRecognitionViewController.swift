@@ -49,11 +49,11 @@ class FaceRecognitionViewController: UIViewController, UINavigationControllerDel
         
         
         // Load 2 demo images
-        let face1 = UIImage(named: "face1")
-        let face2 = UIImage(named: "face2")
+        let left = UIImage(named: "brangelina1")
+        let right = UIImage(named: "brangelina2")
         
-        face1ImageView.image = face1
-        face2ImageView.image = face2
+        face1ImageView.image = left
+        face2ImageView.image = right
     
         title = "Face Recognition"
         

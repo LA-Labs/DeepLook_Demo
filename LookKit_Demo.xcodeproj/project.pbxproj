@@ -12,6 +12,9 @@
 		543FCFEC25E43F3F00EFB981 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 543FCFEA25E43F3F00EFB981 /* Main.storyboard */; };
 		543FCFEE25E43F4200EFB981 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 543FCFED25E43F4200EFB981 /* Assets.xcassets */; };
 		543FCFF125E43F4200EFB981 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 543FCFEF25E43F4200EFB981 /* LaunchScreen.storyboard */; };
+		544FC5F6261C75B200241BA2 /* Face_location_demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544FC5F5261C75B100241BA2 /* Face_location_demo.swift */; };
+		544FC5FB261C77CB00241BA2 /* Crop_faces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544FC5FA261C77CB00241BA2 /* Crop_faces.swift */; };
+		544FC5FE261C786300241BA2 /* Find_faces_landmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544FC5FD261C786300241BA2 /* Find_faces_landmarks.swift */; };
 		545E922E25E51B0E00D86990 /* FaceGroupingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E922C25E51B0E00D86990 /* FaceGroupingViewController.swift */; };
 		545E922F25E51B0E00D86990 /* LookKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E922D25E51B0E00D86990 /* LookKitService.swift */; };
 		545E923625E51B1F00D86990 /* HeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545E923225E51B1E00D86990 /* HeaderCollectionReusableView.xib */; };
@@ -34,6 +37,9 @@
 		543FCFED25E43F4200EFB981 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		543FCFF025E43F4200EFB981 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		543FCFF225E43F4200EFB981 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		544FC5F5261C75B100241BA2 /* Face_location_demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Face_location_demo.swift; sourceTree = "<group>"; };
+		544FC5FA261C77CB00241BA2 /* Crop_faces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crop_faces.swift; sourceTree = "<group>"; };
+		544FC5FD261C786300241BA2 /* Find_faces_landmarks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Find_faces_landmarks.swift; sourceTree = "<group>"; };
 		545E922C25E51B0E00D86990 /* FaceGroupingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceGroupingViewController.swift; sourceTree = "<group>"; };
 		545E922D25E51B0E00D86990 /* LookKitService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LookKitService.swift; sourceTree = "<group>"; };
 		545E923225E51B1E00D86990 /* HeaderCollectionReusableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderCollectionReusableView.xib; sourceTree = "<group>"; };
@@ -80,6 +86,7 @@
 		543FCFE325E43F3F00EFB981 /* LookKit_Demo */ = {
 			isa = PBXGroup;
 			children = (
+				544FC5F4261C758B00241BA2 /* Deeplook Demo */,
 				54FBC3A025F79BC200F3B743 /* LookKit_Demo.entitlements */,
 				545E923125E51B1E00D86990 /* View */,
 				543FCFE425E43F3F00EFB981 /* AppDelegate.swift */,
@@ -95,6 +102,16 @@
 				548899A125E94F3100E480BF /* UIView + Extention.swift */,
 			);
 			path = LookKit_Demo;
+			sourceTree = "<group>";
+		};
+		544FC5F4261C758B00241BA2 /* Deeplook Demo */ = {
+			isa = PBXGroup;
+			children = (
+				544FC5F5261C75B100241BA2 /* Face_location_demo.swift */,
+				544FC5FD261C786300241BA2 /* Find_faces_landmarks.swift */,
+				544FC5FA261C77CB00241BA2 /* Crop_faces.swift */,
+			);
+			path = "Deeplook Demo";
 			sourceTree = "<group>";
 		};
 		545E923125E51B1E00D86990 /* View */ = {
@@ -208,11 +225,14 @@
 				545E922F25E51B0E00D86990 /* LookKitService.swift in Sources */,
 				543FCFE525E43F3F00EFB981 /* AppDelegate.swift in Sources */,
 				548899A225E94F3100E480BF /* UIView + Extention.swift in Sources */,
+				544FC5FE261C786300241BA2 /* Find_faces_landmarks.swift in Sources */,
 				545E925125E6E96200D86990 /* ObjectDetectionViewController.swift in Sources */,
 				545E925425E6F2D700D86990 /* FaceRecognitionViewController.swift in Sources */,
 				545E923825E51B1F00D86990 /* HeaderCollectionReusableView.swift in Sources */,
 				543FCFE725E43F3F00EFB981 /* SceneDelegate.swift in Sources */,
 				54C7980D25F00C6800EFABB7 /* FaceGroupingDetailViewController.swift in Sources */,
+				544FC5FB261C77CB00241BA2 /* Crop_faces.swift in Sources */,
+				544FC5F6261C75B200241BA2 /* Face_location_demo.swift in Sources */,
 				54C798C725F27C1500EFABB7 /* FaceGroupingFaceImageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
