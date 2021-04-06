@@ -14,19 +14,22 @@ class LookKitService {
     
     func startClustering() {
         // Fetch Options
+        // Last 200 images from the user gallery
         let options = AssetFetchingOptions(sortDescriptors: nil,
-                                           assetCollection: .allAssets,
-                                           fetchLimit: 100)
+                                           assetCollection: .allPhotos,
+                                           fetchLimit: 200)
         
         // Cluster Options
         let culsterOptions = ClusterOptions(minimumClusterSize: 2,
-                                            numberIterations: 100,
+                                            numberIterations: 200,
+                                            // Maximum l2 norm euclidean distance between 2 faces
                                             faceSimilarityThreshold: 0.75)
         
         let processConfiguration = ProcessConfiguration()
-        processConfiguration.minimumQualityFilter = .medium
+        processConfiguration.minimumQualityFilter = .low
         processConfiguration.landmarksAlignmentAlgorithm = .pointsSphereFace5
         processConfiguration.faceChipPadding = 0.0
+        processConfiguration.fetchImageSize = 500
         
         // Start Clustering
         Recognition.cluster(fetchOptions: options,

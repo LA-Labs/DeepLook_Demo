@@ -104,7 +104,7 @@ extension FaceGroupingViewController: UICollectionViewDataSource, UICollectionVi
         DispatchQueue.main.async {
             cell.faceImageView.image = self.faces[indexPath.row][0].faceCroppedImage
             cell.title.text = "\(self.faces[indexPath.row].count) Faces"
-            cell.faceImageView.layer.cornerRadius = ((collectionView.collectionViewLayout as! UICollectionViewFlowLayout).itemSize.width - 16)/2
+            cell.faceImageView.layer.cornerRadius = 12
         }
 
         return cell
