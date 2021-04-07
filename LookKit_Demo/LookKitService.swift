@@ -29,7 +29,7 @@ class LookKitService {
         processConfiguration.minimumQualityFilter = .low
         processConfiguration.landmarksAlignmentAlgorithm = .pointsSphereFace5
         processConfiguration.faceChipPadding = 0.0
-        processConfiguration.fetchImageSize = 500
+        processConfiguration.fetchImageSize = 800
         
         // Start Clustering
         Recognition.cluster(fetchOptions: options,
