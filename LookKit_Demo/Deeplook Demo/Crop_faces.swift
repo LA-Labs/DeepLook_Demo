@@ -22,7 +22,7 @@ func cropFaces(completion: @escaping (Result<[UIImage], Error>) -> Void) {
         let cropFaces = DeepLook.cropFaces(image,
                                            locations: faceLocations)
         
-        completion(.success(cropFaces!))
+        completion(.success(cropFaces))
     }
 
 }

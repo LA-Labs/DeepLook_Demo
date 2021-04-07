@@ -19,7 +19,7 @@ func facesEmotion(completion: @escaping (Result<[Face.FaceEmotion], Error>) -> V
         let faceLocations = DeepLook.faceEmotion(image)
         
         
-        completion(.success(cropFaces!))
+        completion(.success(faceLocations))
     }
     
 }
