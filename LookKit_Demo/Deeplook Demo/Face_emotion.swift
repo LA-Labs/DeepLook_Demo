@@ -8,7 +8,7 @@
 import UIKit
 import LookKit
 
-func facesEmotion(completion: @escaping (Result<[Face.FaceEmotion], Error>) -> Void) {
+func facesEmotion() {
     
     let image = UIImage(named: "angelina")!
     
@@ -18,8 +18,6 @@ func facesEmotion(completion: @escaping (Result<[Face.FaceEmotion], Error>) -> V
         // get face emotion for each face.
         let faceLocations = DeepLook.faceEmotion(image)
         
-        
-        completion(.success(faceLocations))
     }
     
 }

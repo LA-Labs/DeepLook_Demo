@@ -8,7 +8,7 @@
 import UIKit
 import LookKit
 
-func findFacesLandmakrs(completion: @escaping (Result<[[CGPoint]],Error>) -> Void) {
+func findFacesLandmakrs() {
     
     let image = UIImage(named: "angelina")!
     
@@ -27,9 +27,7 @@ func findFacesLandmakrs(completion: @escaping (Result<[[CGPoint]],Error>) -> Voi
                     CGPoint(x: point.x, y: imageSize.height - point.y)
                 })
         })
-        
-        completion(.success(points))
-        
+                
     }
 
 }

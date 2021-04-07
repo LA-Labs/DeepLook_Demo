@@ -8,7 +8,7 @@
 import UIKit
 import LookKit
 
-func cropFaces(completion: @escaping (Result<[UIImage], Error>) -> Void) {
+func cropFaces() {
     
     let image = UIImage(named: "angelina")!
     
@@ -22,7 +22,6 @@ func cropFaces(completion: @escaping (Result<[UIImage], Error>) -> Void) {
         let cropFaces = DeepLook.cropFaces(image,
                                            locations: faceLocations)
         
-        completion(.success(cropFaces))
     }
 
 }

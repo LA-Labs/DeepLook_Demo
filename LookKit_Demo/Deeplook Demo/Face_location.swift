@@ -9,7 +9,7 @@ import UIKit
 import LookKit
 import Vision
 
-func findFaceLocations(completion: @escaping (Result<[CGRect], Error>) -> Void) {
+func findFaceLocations() {
     
     let image = UIImage(named: "angelina")!
     
@@ -19,14 +19,13 @@ func findFaceLocations(completion: @escaping (Result<[CGRect], Error>) -> Void) 
         // get all normlized bounding boxes.
         let faceLocations = DeepLook.faceLocation(image)
         
-        // absolute bounding box in respective to image size.
+        // absolute bounding box location in respective to image size.
         let boundingBoxes = faceLocations.map { (faceLocations) -> CGRect in
             VNImageRectForNormalizedRect(faceLocations,
                                          Int(image.cgImage!.width),
                                          Int(image.cgImage!.height))
         }
         
-        completion(.success(boundingBoxes))
     }
 
 }
