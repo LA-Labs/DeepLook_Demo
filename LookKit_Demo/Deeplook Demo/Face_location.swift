@@ -19,7 +19,7 @@ func findFaceLocations() {
         // get all normlized bounding boxes.
         let faceLocations = DeepLook.faceLocation(image)
         
-        // absolute bounding box location in respective to image size.
+        // bounding box location with respective to image size.
         let boundingBoxes = faceLocations.map { (faceLocations) -> CGRect in
             VNImageRectForNormalizedRect(faceLocations,
                                          Int(image.cgImage!.width),
