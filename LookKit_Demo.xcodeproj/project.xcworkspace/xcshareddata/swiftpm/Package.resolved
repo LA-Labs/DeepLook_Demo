@@ -2,12 +2,12 @@
   "object": {
     "pins": [
       {
-        "package": "LookKit_Package",
-        "repositoryURL": "https://github.com/LA-Labs/LookKit_Package.git",
+        "package": "LookKit",
+        "repositoryURL": "https://github.com/LA-Labs/LookKit.git",
         "state": {
-          "branch": "main",
-          "revision": "8ca1c9f46561e35b46f22d737a56ebbebd2000e4",
-          "version": null
+          "branch": null,
+          "revision": "1b89ecb3cf25a3c2f36579047646368afb71f995",
+          "version": "0.0.22"
         }
       }
     ]

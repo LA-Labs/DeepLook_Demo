@@ -25,7 +25,7 @@
 		545E925125E6E96200D86990 /* ObjectDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E925025E6E96200D86990 /* ObjectDetectionViewController.swift */; };
 		545E925425E6F2D700D86990 /* FaceRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E925325E6F2D700D86990 /* FaceRecognitionViewController.swift */; };
 		548899A225E94F3100E480BF /* UIView + Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548899A125E94F3100E480BF /* UIView + Extention.swift */; };
-		54C637D025F28FCE0091FDB7 /* LookKit in Frameworks */ = {isa = PBXBuildFile; productRef = 54C637CF25F28FCE0091FDB7 /* LookKit */; };
+		54A568472620C4DB00E39C40 /* LookKit in Frameworks */ = {isa = PBXBuildFile; productRef = 54A568462620C4DB00E39C40 /* LookKit */; };
 		54C7980D25F00C6800EFABB7 /* FaceGroupingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C7980C25F00C6700EFABB7 /* FaceGroupingDetailViewController.swift */; };
 		54C798C725F27C1500EFABB7 /* FaceGroupingFaceImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C798C625F27C1500EFABB7 /* FaceGroupingFaceImageViewController.swift */; };
 /* End PBXBuildFile section */
@@ -61,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54C637D025F28FCE0091FDB7 /* LookKit in Frameworks */,
+				54A568472620C4DB00E39C40 /* LookKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,7 +162,7 @@
 			);
 			name = LookKit_Demo;
 			packageProductDependencies = (
-				54C637CF25F28FCE0091FDB7 /* LookKit */,
+				54A568462620C4DB00E39C40 /* LookKit */,
 			);
 			productName = LookKit_Demo;
 			productReference = 543FCFE125E43F3F00EFB981 /* LookKit_Demo.app */;
@@ -192,7 +192,7 @@
 			);
 			mainGroup = 543FCFD825E43F3F00EFB981;
 			packageReferences = (
-				545E919425E4F88800D86990 /* XCRemoteSwiftPackageReference "LookKit_Package" */,
+				54A568452620C4DB00E39C40 /* XCRemoteSwiftPackageReference "LookKit" */,
 			);
 			productRefGroup = 543FCFE225E43F3F00EFB981 /* Products */;
 			projectDirPath = "";
@@ -447,20 +447,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		545E919425E4F88800D86990 /* XCRemoteSwiftPackageReference "LookKit_Package" */ = {
+		54A568452620C4DB00E39C40 /* XCRemoteSwiftPackageReference "LookKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/LA-Labs/LookKit_Package.git";
+			repositoryURL = "https://github.com/LA-Labs/LookKit.git";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.22;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		54C637CF25F28FCE0091FDB7 /* LookKit */ = {
+		54A568462620C4DB00E39C40 /* LookKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 545E919425E4F88800D86990 /* XCRemoteSwiftPackageReference "LookKit_Package" */;
+			package = 54A568452620C4DB00E39C40 /* XCRemoteSwiftPackageReference "LookKit" */;
 			productName = LookKit;
 		};
 /* End XCSwiftPackageProductDependency section */
