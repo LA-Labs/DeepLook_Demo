@@ -453,7 +453,7 @@
 			requirement = {
 				kind = versionRange;
 				maximumVersion = 1.0.0;
-				minimumVersion = 0.0.22;
+				minimumVersion = 0.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

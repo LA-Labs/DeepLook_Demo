@@ -15,7 +15,7 @@ func cropFaces() {
     // move to background thread
     DispatchQueue.global().async {
         
-        // normlized bounding box.
+        // normalized bounding box.
         let faceLocations = DeepLook.faceLocation(image)
         
         // Crop chip faces.

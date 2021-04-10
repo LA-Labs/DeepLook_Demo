@@ -20,7 +20,7 @@ class LookKitService {
                                            fetchLimit: 200)
         
         // Cluster Options
-        let culsterOptions = ClusterOptions(minimumClusterSize: 2,
+        let clusterOptions = ClusterOptions(minimumClusterSize: 2,
                                             numberIterations: 200,
                                             // Maximum l2 norm euclidean distance between 2 faces
                                             faceSimilarityThreshold: 0.75)
@@ -33,7 +33,7 @@ class LookKitService {
         
         // Start Clustering
         Recognition.cluster(fetchOptions: options,
-                            culsterOptions: culsterOptions,
+                            clusterOptions: clusterOptions,
                             processConfiguration: processConfiguration) { [weak self] (result) in
             switch result {
             case .success(let faces):

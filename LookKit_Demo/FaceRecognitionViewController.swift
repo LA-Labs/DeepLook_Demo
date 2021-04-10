@@ -65,11 +65,11 @@ class FaceRecognitionViewController: UIViewController, UINavigationControllerDel
         // Verify configuration
         let processConfig = ProcessConfiguration()
         
-        // Add 40% padding on the cropped faces chip
-        processConfig.faceChipPadding = 0.4
+        // Add 0% padding on the cropped faces chip
+        processConfig.faceChipPadding = 0.0
         
-        // Use Dlib 5 point landmarks to align face
-        processConfig.landmarksAlignmentAlgorithm = .pointsDlib5
+        // Use Sphere Face 5 point landmarks to align face
+        processConfig.landmarksAlignmentAlgorithm = .pointsSphereFace5
         
         // Use facenet to encode face to 128 vector representation.
         processConfig.faceEncoderModel = .facenet

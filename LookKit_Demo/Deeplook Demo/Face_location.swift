@@ -16,7 +16,7 @@ func findFaceLocations() {
     // move to background thread
     DispatchQueue.global().async {
         
-        // get all normlized bounding boxes.
+        // get all normalized bounding boxes.
         let faceLocations = DeepLook.faceLocation(image)
         
         // bounding box location with respective to image size.

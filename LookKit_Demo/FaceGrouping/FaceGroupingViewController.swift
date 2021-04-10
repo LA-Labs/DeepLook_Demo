@@ -56,7 +56,7 @@ class FaceGroupingViewController: UIViewController {
         collectionView.collectionViewLayout = layout
         collectionView.collectionViewLayout.invalidateLayout()
         
-        // Chack user photos authorization using PhotosAuthorizationService.
+        // Check user photos authorization using PhotosAuthorizationService.
         PhotosAuthorizationService.checkPhotoLibraryPermission { [weak self]  (result) in
             switch result {
             case .success():
