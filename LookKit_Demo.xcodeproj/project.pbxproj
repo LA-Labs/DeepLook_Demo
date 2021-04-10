@@ -451,7 +451,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/LA-Labs/LookKit.git";
 			requirement = {
-				kind = upToNextMajorVersion;
+				kind = versionRange;
+				maximumVersion = 1.0.0;
 				minimumVersion = 0.0.22;
 			};
 		};
