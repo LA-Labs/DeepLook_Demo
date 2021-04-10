@@ -8,7 +8,7 @@
 import UIKit
 import LookKit
 
-func findFacesLandmakrs() {
+func findFacesLandmarks() {
     
     let image = UIImage(named: "angelina")!
     
