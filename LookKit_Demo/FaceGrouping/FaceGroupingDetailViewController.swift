@@ -41,7 +41,7 @@ class FaceGroupingDetailViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let selectedPath = collectionView.indexPathsForSelectedItems?.first else { return }
         if let target = segue.destination as? FaceGroupingFaceImageViewController {
-            target.imageID = faces[selectedPath.row].localIdnetifier
+            target.imageID = faces[selectedPath.row].localIdentifier
         }
     }
 
