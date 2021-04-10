@@ -15,8 +15,8 @@ func facesEmotion() {
     // move to background thread
     DispatchQueue.global().async {
         
-        // get face emotion for each face.
-        let faceLocations = DeepLook.faceEmotion(image)
+        // Get face emotion for each face.
+        let faceEmotions = DeepLook.faceEmotion(image)
         
     }
     
