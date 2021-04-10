@@ -11,22 +11,6 @@ The sample App shows scenarios such as Object Detection, Face Verification, and 
 - Xcode 12.0+
 - Swift 5.3+
 
-# SDK Installation with Swift Package Manager
-Since this project has been integrated with LookKit SDK SPM now, please check the following steps to install LookKitSDK.framework using SPM after you downloading this project:
-
-1. Install SPM
-
-Make sure you have the LookKit_Package in you project tree.
-
-![Screenshot](package.png)
-
-2. Update the package
-
-Go to File -> Swift Package -> Update to Latest Package Versions
-
-3. Make sure you have enough photos with people on your traget (Simulator/iDevice).
-
-
 # Feedback
 
 We’d love to hear your feedback for this demo.
