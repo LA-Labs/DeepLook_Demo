@@ -6,7 +6,8 @@
 //
 
 import UIKit
-import LookKit
+import DeepLook
+
 class FaceRecognitionViewController: UIViewController, UINavigationControllerDelegate {
     
     // Outlets

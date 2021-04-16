@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import LookKit
+import DeepLook
 
 class ObjectDetectionViewController: UIViewController, UINavigationControllerDelegate {
 
@@ -44,7 +44,7 @@ class ObjectDetectionViewController: UIViewController, UINavigationControllerDel
         // Creat new action for the detecotor.
         // In this case object detection.
         // Can be piped to other actions like object location, face location, etc.
-        let action = Actions.objectDetecting
+        let action = Actions.objectDetecting --> Actions.objectLocation --> Actions.faceQuality --> Actions.cropAndAlignFaces
         Detector.analyze(action, sourceImage: image) { (result) in
             switch result {
             case .success(let photo):

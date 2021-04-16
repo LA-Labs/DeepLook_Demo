@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import LookKit
+import DeepLook
 
 class FaceGroupingFaceImageViewController: UIViewController {
 

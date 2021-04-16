@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "DeepLook",
+        "repositoryURL": "https://github.com/LA-Labs/DeepLook.git",
+        "state": {
+          "branch": "main",
+          "revision": "ad76c306645702259b9dc855f63b13731faddd29",
+          "version": null
+        }
+      },
+      {
+        "package": "LADSA",
+        "repositoryURL": "https://github.com/LA-Labs/LADSA.git",
+        "state": {
+          "branch": null,
+          "revision": "37b532de3571f15d28a77ecf9f59019d190dfd9c",
+          "version": "0.0.4"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

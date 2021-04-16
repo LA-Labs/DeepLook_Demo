@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import LookKit
+import DeepLook
 import Combine
 
 class LookKitService {

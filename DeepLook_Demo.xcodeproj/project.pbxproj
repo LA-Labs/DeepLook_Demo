@@ -16,6 +16,7 @@
 		544FC5FB261C77CB00241BA2 /* Crop_faces.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544FC5FA261C77CB00241BA2 /* Crop_faces.swift */; };
 		544FC5FE261C786300241BA2 /* Faces_landmarks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544FC5FD261C786300241BA2 /* Faces_landmarks.swift */; };
 		544FC60B261CA4E900241BA2 /* Face_emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544FC60A261CA4E900241BA2 /* Face_emotion.swift */; };
+		5450130926276C650052C638 /* DeepLook in Frameworks */ = {isa = PBXBuildFile; productRef = 5450130826276C650052C638 /* DeepLook */; };
 		545E922E25E51B0E00D86990 /* FaceGroupingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E922C25E51B0E00D86990 /* FaceGroupingViewController.swift */; };
 		545E922F25E51B0E00D86990 /* LookKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E922D25E51B0E00D86990 /* LookKitService.swift */; };
 		545E923625E51B1F00D86990 /* HeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 545E923225E51B1E00D86990 /* HeaderCollectionReusableView.xib */; };
@@ -25,13 +26,12 @@
 		545E925125E6E96200D86990 /* ObjectDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E925025E6E96200D86990 /* ObjectDetectionViewController.swift */; };
 		545E925425E6F2D700D86990 /* FaceRecognitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545E925325E6F2D700D86990 /* FaceRecognitionViewController.swift */; };
 		548899A225E94F3100E480BF /* UIView + Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548899A125E94F3100E480BF /* UIView + Extention.swift */; };
-		54A568472620C4DB00E39C40 /* LookKit in Frameworks */ = {isa = PBXBuildFile; productRef = 54A568462620C4DB00E39C40 /* LookKit */; };
 		54C7980D25F00C6800EFABB7 /* FaceGroupingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C7980C25F00C6700EFABB7 /* FaceGroupingDetailViewController.swift */; };
 		54C798C725F27C1500EFABB7 /* FaceGroupingFaceImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C798C625F27C1500EFABB7 /* FaceGroupingFaceImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		543FCFE125E43F3F00EFB981 /* LookKit_Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LookKit_Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		543FCFE125E43F3F00EFB981 /* DeepLook_Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeepLook_Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		543FCFE425E43F3F00EFB981 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		543FCFE625E43F3F00EFB981 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		543FCFEB25E43F3F00EFB981 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -53,7 +53,7 @@
 		548899A125E94F3100E480BF /* UIView + Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extention.swift"; sourceTree = "<group>"; };
 		54C7980C25F00C6700EFABB7 /* FaceGroupingDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceGroupingDetailViewController.swift; sourceTree = "<group>"; };
 		54C798C625F27C1500EFABB7 /* FaceGroupingFaceImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceGroupingFaceImageViewController.swift; sourceTree = "<group>"; };
-		54FBC3A025F79BC200F3B743 /* LookKit_Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LookKit_Demo.entitlements; sourceTree = "<group>"; };
+		54FBC3A025F79BC200F3B743 /* DeepLook_Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DeepLook_Demo.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54A568472620C4DB00E39C40 /* LookKit in Frameworks */,
+				5450130926276C650052C638 /* DeepLook in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,7 +71,7 @@
 		543FCFD825E43F3F00EFB981 = {
 			isa = PBXGroup;
 			children = (
-				543FCFE325E43F3F00EFB981 /* LookKit_Demo */,
+				543FCFE325E43F3F00EFB981 /* DeepLook_Demo */,
 				543FCFE225E43F3F00EFB981 /* Products */,
 				54889A1025EBE82A00E480BF /* Frameworks */,
 			);
@@ -80,16 +80,16 @@
 		543FCFE225E43F3F00EFB981 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				543FCFE125E43F3F00EFB981 /* LookKit_Demo.app */,
+				543FCFE125E43F3F00EFB981 /* DeepLook_Demo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		543FCFE325E43F3F00EFB981 /* LookKit_Demo */ = {
+		543FCFE325E43F3F00EFB981 /* DeepLook_Demo */ = {
 			isa = PBXGroup;
 			children = (
 				544FC5F4261C758B00241BA2 /* Deeplook Demo */,
-				54FBC3A025F79BC200F3B743 /* LookKit_Demo.entitlements */,
+				54FBC3A025F79BC200F3B743 /* DeepLook_Demo.entitlements */,
 				545E923125E51B1E00D86990 /* View */,
 				543FCFE425E43F3F00EFB981 /* AppDelegate.swift */,
 				543FCFE625E43F3F00EFB981 /* SceneDelegate.swift */,
@@ -103,7 +103,7 @@
 				543FCFF225E43F4200EFB981 /* Info.plist */,
 				548899A125E94F3100E480BF /* UIView + Extention.swift */,
 			);
-			path = LookKit_Demo;
+			path = DeepLook_Demo;
 			sourceTree = "<group>";
 		};
 		544FC5F4261C758B00241BA2 /* Deeplook Demo */ = {
@@ -148,9 +148,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		543FCFE025E43F3F00EFB981 /* LookKit_Demo */ = {
+		543FCFE025E43F3F00EFB981 /* DeepLook_Demo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 543FCFF525E43F4200EFB981 /* Build configuration list for PBXNativeTarget "LookKit_Demo" */;
+			buildConfigurationList = 543FCFF525E43F4200EFB981 /* Build configuration list for PBXNativeTarget "DeepLook_Demo" */;
 			buildPhases = (
 				543FCFDD25E43F3F00EFB981 /* Sources */,
 				543FCFDE25E43F3F00EFB981 /* Frameworks */,
@@ -160,12 +160,12 @@
 			);
 			dependencies = (
 			);
-			name = LookKit_Demo;
+			name = DeepLook_Demo;
 			packageProductDependencies = (
-				54A568462620C4DB00E39C40 /* LookKit */,
+				5450130826276C650052C638 /* DeepLook */,
 			);
 			productName = LookKit_Demo;
-			productReference = 543FCFE125E43F3F00EFB981 /* LookKit_Demo.app */;
+			productReference = 543FCFE125E43F3F00EFB981 /* DeepLook_Demo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -182,7 +182,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 543FCFDC25E43F3F00EFB981 /* Build configuration list for PBXProject "LookKit_Demo" */;
+			buildConfigurationList = 543FCFDC25E43F3F00EFB981 /* Build configuration list for PBXProject "DeepLook_Demo" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -192,13 +192,13 @@
 			);
 			mainGroup = 543FCFD825E43F3F00EFB981;
 			packageReferences = (
-				54A568452620C4DB00E39C40 /* XCRemoteSwiftPackageReference "LookKit" */,
+				5450130326276C110052C638 /* XCRemoteSwiftPackageReference "DeepLook" */,
 			);
 			productRefGroup = 543FCFE225E43F3F00EFB981 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				543FCFE025E43F3F00EFB981 /* LookKit_Demo */,
+				543FCFE025E43F3F00EFB981 /* DeepLook_Demo */,
 			);
 		};
 /* End PBXProject section */
@@ -314,7 +314,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -369,7 +369,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -384,10 +384,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = LookKit_Demo/LookKit_Demo.entitlements;
+				CODE_SIGN_ENTITLEMENTS = DeepLook_Demo/DeepLook_Demo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 75F94K2BEH;
-				INFOPLIST_FILE = LookKit_Demo/Info.plist;
+				INFOPLIST_FILE = DeepLook_Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -406,10 +406,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = LookKit_Demo/LookKit_Demo.entitlements;
+				CODE_SIGN_ENTITLEMENTS = DeepLook_Demo/DeepLook_Demo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 75F94K2BEH;
-				INFOPLIST_FILE = LookKit_Demo/Info.plist;
+				INFOPLIST_FILE = DeepLook_Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -426,7 +426,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		543FCFDC25E43F3F00EFB981 /* Build configuration list for PBXProject "LookKit_Demo" */ = {
+		543FCFDC25E43F3F00EFB981 /* Build configuration list for PBXProject "DeepLook_Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				543FCFF325E43F4200EFB981 /* Debug */,
@@ -435,7 +435,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		543FCFF525E43F4200EFB981 /* Build configuration list for PBXNativeTarget "LookKit_Demo" */ = {
+		543FCFF525E43F4200EFB981 /* Build configuration list for PBXNativeTarget "DeepLook_Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				543FCFF625E43F4200EFB981 /* Debug */,
@@ -447,22 +447,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		54A568452620C4DB00E39C40 /* XCRemoteSwiftPackageReference "LookKit" */ = {
+		5450130326276C110052C638 /* XCRemoteSwiftPackageReference "DeepLook" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/LA-Labs/LookKit.git";
+			repositoryURL = "https://github.com/LA-Labs/DeepLook.git";
 			requirement = {
-				kind = versionRange;
-				maximumVersion = 1.0.0;
-				minimumVersion = 0.0.0;
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		54A568462620C4DB00E39C40 /* LookKit */ = {
+		5450130826276C650052C638 /* DeepLook */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 54A568452620C4DB00E39C40 /* XCRemoteSwiftPackageReference "LookKit" */;
-			productName = LookKit;
+			package = 5450130326276C110052C638 /* XCRemoteSwiftPackageReference "DeepLook" */;
+			productName = DeepLook;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

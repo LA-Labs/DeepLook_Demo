@@ -7,7 +7,7 @@
 
 import UIKit
 import Combine
-import LookKit
+import DeepLook
 
 class FaceGroupingViewController: UIViewController {
 
