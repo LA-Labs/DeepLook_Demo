@@ -14,7 +14,7 @@
         <!--Face Grouping View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="FaceGroupingViewController" customModule="LookKit_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="FaceGroupingViewController" customModule="DeepLook_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,7 +77,7 @@
         <!--Face Grouping Detail View Controller-->
         <scene sceneID="7lE-91-5XJ">
             <objects>
-                <viewController id="1mA-JJ-esZ" customClass="FaceGroupingDetailViewController" customModule="LookKit_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1mA-JJ-esZ" customClass="FaceGroupingDetailViewController" customModule="DeepLook_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xRf-eP-RvJ">
                         <rect key="frame" x="0.0" y="0.0" width="300" height="391.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -127,7 +127,7 @@
         <!--Face Grouping Face Image View Controller-->
         <scene sceneID="uBS-gx-tXM">
             <objects>
-                <viewController id="daY-db-raR" customClass="FaceGroupingFaceImageViewController" customModule="LookKit_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="daY-db-raR" customClass="FaceGroupingFaceImageViewController" customModule="DeepLook_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DyO-Um-Xr0">
                         <rect key="frame" x="0.0" y="0.0" width="300" height="391.5"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -229,7 +229,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="jQ3-2g-NdV" firstAttribute="centerY" secondItem="Oh4-DF-VLm" secondAttribute="centerY" id="0sM-0o-HZN"/>
-                                                <constraint firstItem="jQ3-2g-NdV" firstAttribute="leading" secondItem="Oh4-DF-VLm" secondAttribute="leading" constant="16" id="avG-dH-bfj"/>
+                                                <constraint firstItem="jQ3-2g-NdV" firstAttribute="leading" secondItem="Oh4-DF-VLm" secondAttribute="leading" constant="16" id="Ag5-Nx-JL5"/>
                                                 <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="jQ3-2g-NdV" secondAttribute="trailing" constant="20" symbolic="YES" id="huw-0y-058"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -245,7 +245,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Object Detection" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qY0-Pv-J7K">
-                                                    <rect key="frame" x="20" y="-2.5" width="378" height="49"/>
+                                                    <rect key="frame" x="16" y="-2.5" width="382" height="49"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="49" id="dF5-Bp-D6d"/>
                                                     </constraints>
@@ -256,7 +256,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="qY0-Pv-J7K" secondAttribute="trailing" constant="16" id="J4I-q6-9R1"/>
-                                                <constraint firstItem="qY0-Pv-J7K" firstAttribute="leading" secondItem="e0H-cO-anW" secondAttribute="leadingMargin" id="RZF-M7-aTw"/>
+                                                <constraint firstItem="qY0-Pv-J7K" firstAttribute="leading" secondItem="e0H-cO-anW" secondAttribute="leading" constant="16" id="yB9-ld-QlV"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <constraints>
@@ -283,7 +283,7 @@
         <!--Face Recognition View Controller-->
         <scene sceneID="WHD-tJ-znK">
             <objects>
-                <viewController id="wqe-ge-iO9" customClass="FaceRecognitionViewController" customModule="LookKit_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="wqe-ge-iO9" customClass="FaceRecognitionViewController" customModule="DeepLook_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OdG-kK-GiE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -411,7 +411,7 @@
         <!--Object Detection View Controller-->
         <scene sceneID="hMk-rA-YBy">
             <objects>
-                <viewController id="Wbh-vr-RA2" customClass="ObjectDetectionViewController" customModule="LookKit_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Wbh-vr-RA2" customClass="ObjectDetectionViewController" customModule="DeepLook_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BtV-sx-vjo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
