@@ -9,80 +9,84 @@ import UIKit
 import Combine
 import DeepLook
 
+@MainActor
 class FaceGroupingViewController: UIViewController {
 
-    // Outlet
-    @IBOutlet weak var progressLabel: UILabel!
-    @IBOutlet weak var collectionView: UICollectionView!
-    
-    // Service
-    let service = LookKitService()
-    
-    // Combine
-    var binding = Set<AnyCancellable>()
-    
-    // Objects
-    var faces: [[Face]] = [] {
-        didSet { collectionView.reloadData() }
-    }
-    
-    deinit {
-        print("deinit \(self)")
-    }
-    
-    // Lifecycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.title = "Face Grouping"
-        
-        // Collection View
-        collectionView.register(UINib(nibName: "FaceCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        let layout = UICollectionViewFlowLayout()
+  // Outlet
+  @IBOutlet weak var progressLabel: UILabel!
+  @IBOutlet weak var collectionView: UICollectionView!
 
-        let width = (UIScreen.main.bounds.width-64)/3
-        #if targetEnvironment(macCatalyst)
-        layout.itemSize = CGSize(width: 195, height: 190 + 35)
-        #else
-        layout.itemSize = CGSize(width: width, height: width + 25)
-        #endif
+  // Service
+  let service = LookKitService()
 
-        layout.minimumLineSpacing = 1
-        layout.minimumInteritemSpacing = 1
+  // Combine
+  var binding = Set<AnyCancellable>()
 
-        
-        collectionView.collectionViewLayout = layout
-        collectionView.collectionViewLayout.invalidateLayout()
-        
-        // Check user photos authorization using PhotosAuthorizationService.
-        PhotosAuthorizationService.checkPhotoLibraryPermission { [weak self]  (result) in
-            switch result {
-            case .success():
-                // If we have, or the user just grant permission
-                // Start clustering faces.
-                self?.service.startClustering()
-            case .failure(let error):
-                print(error)
-            }
+  // Objects
+  var faces: [[Face]] = [] {
+    didSet { collectionView.reloadData() }
+  }
+
+  deinit {
+    print("deinit \(self)")
+  }
+
+  // Lifecycle
+  override func viewDidLoad() {
+    super.viewDidLoad()
+
+    self.title = "Face Grouping"
+
+    // Collection View
+    collectionView.register(UINib(nibName: "FaceCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "cell")
+    collectionView.dataSource = self
+    collectionView.delegate = self
+    let layout = UICollectionViewFlowLayout()
+
+    let width = (UIScreen.main.bounds.width-64)/3
+#if targetEnvironment(macCatalyst)
+    layout.itemSize = CGSize(width: 195, height: 190 + 35)
+#else
+    layout.itemSize = CGSize(width: width, height: width + 25)
+#endif
+
+    layout.minimumLineSpacing = 1
+    layout.minimumInteritemSpacing = 1
+
+
+    collectionView.collectionViewLayout = layout
+    collectionView.collectionViewLayout.invalidateLayout()
+
+    // Check user photos authorization using PhotosAuthorizationService.
+    PhotosAuthorizationService.checkPhotoLibraryPermission { [weak self]  (result) in
+      switch result {
+      case .success():
+        // If we have, or the user just grant permission
+        // Start clustering faces.
+        Task { [self] in
+          try! await self?.service.startClustering()
         }
-        service.faces.sink {(result) in
-            
-        } receiveValue: { [weak self]  (faces) in
-            
-            // Clustering service just finished and update us with the new faces collection.
-            self?.faces = faces
-            self?.progressLabel.isHidden = true
-        }.store(in: &binding)
+      case .failure(let error):
+        print(error)
+      }
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let selectedPath = collectionView.indexPathsForSelectedItems?.first else { return }
-        if let target = segue.destination as? FaceGroupingDetailViewController {
-            target.faces = faces[selectedPath.row]
-        }
+    service.faces
+      .receive(on: RunLoop.main)
+      .sink { (result) in }
+      receiveValue: { [weak self]  (faces) in
+
+    // Clustering service just finished and update us with the new faces collection.
+    self?.faces = faces
+    self?.progressLabel.isHidden = true
+  }.store(in: &binding)
+  }
+
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    guard let selectedPath = collectionView.indexPathsForSelectedItems?.first else { return }
+    if let target = segue.destination as? FaceGroupingDetailViewController {
+      target.faces = faces[selectedPath.row]
     }
+  }
 }
 
 //MARK: UICollectionViewDataSource & UICollectionViewDelegateFlowLayout

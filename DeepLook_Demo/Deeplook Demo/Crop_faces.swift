@@ -8,20 +8,14 @@
 import UIKit
 import DeepLook
 
-func cropFaces() {
-    
-    let image = UIImage(named: "angelina")!
-    
-    // move to background thread
-    DispatchQueue.global().async {
-        
-        // normalized bounding box.
-        let faceLocations = DeepLook.faceLocation(image)
-        
-        // Crop chip faces.
-        let cropFaces = DeepLook.cropFaces(image,
-                                           locations: faceLocations)
-        
-    }
+func cropFaces() async {
 
+  let image = UIImage(named: "angelina")!
+
+  // normalized bounding box.
+  let faceLocations = await DeepLook.faceLocation(image)
+
+  // Crop chip faces.
+  let cropFaces = DeepLook.cropFaces(image,
+                                     locations: faceLocations)
 }

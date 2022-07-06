@@ -8,16 +8,12 @@
 import UIKit
 import DeepLook
 
-func facesEmotion() {
-    
-    let image = UIImage(named: "angelina")!
-    
-    // move to background thread
-    DispatchQueue.global().async {
-        
-        // Get face emotion for each face.
-        let faceEmotions = DeepLook.faceEmotion(image)
-        
-    }
-    
+func facesEmotion() async {
+
+  let image = UIImage(named: "angelina")!
+  
+  // Get face emotion for each face.
+  let faceEmotions = await DeepLook.faceEmotion(image)
+
+
 }

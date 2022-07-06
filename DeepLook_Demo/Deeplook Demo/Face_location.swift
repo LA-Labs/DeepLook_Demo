@@ -9,23 +9,17 @@ import UIKit
 import DeepLook
 import Vision
 
-func findFaceLocations() {
-    
-    let image = UIImage(named: "angelina")!
-    
-    // move to background thread
-    DispatchQueue.global().async {
-        
-        // get all normalized bounding boxes.
-        let faceLocations = DeepLook.faceLocation(image)
-        
-        // bounding box location with respective to image size.
-        let boundingBoxes = faceLocations.map { (faceLocations) -> CGRect in
-            VNImageRectForNormalizedRect(faceLocations,
-                                         Int(image.cgImage!.width),
-                                         Int(image.cgImage!.height))
-        }
-        
-    }
+func findFaceLocations() async {
 
+  let image = UIImage(named: "angelina")!
+  // get all normalized bounding boxes.
+  let faceLocations = await DeepLook.faceLocation(image)
+
+  // bounding box location with respective to image size.
+  let boundingBoxes = faceLocations.map { (faceLocations) -> CGRect in
+    VNImageRectForNormalizedRect(faceLocations,
+                                 Int(image.cgImage!.width),
+                                 Int(image.cgImage!.height))
+
+  }
 }

@@ -28,7 +28,9 @@ class FaceRecognitionViewController: UIViewController, UINavigationControllerDel
     }
     
     @IBAction func verifyDidTap(_ sender: UIButton) {
-        compare()
+      Task {
+        await compare()
+      }
     }
     
 
@@ -57,51 +59,48 @@ class FaceRecognitionViewController: UIViewController, UINavigationControllerDel
         face2ImageView.image = right
     
         title = "Face Recognition"
-        
-        compare()
+      Task {
+        await compare()
+      }
     }
     
-    func compare() {
-            
-        // Verify configuration
-        let processConfig = ProcessConfiguration()
-        
-        // Add 0% padding on the cropped faces chip
-        processConfig.faceChipPadding = 0.0
-        
-        // Use Sphere Face 5 point landmarks to align face
-        processConfig.landmarksAlignmentAlgorithm = .pointsSphereFace5
-        
-        // Use facenet to encode face to 128 vector representation.
-        processConfig.faceEncoderModel = .facenet
-        
-        // Verify faces from image A in image B
-        // Result contains all match faces from image A found on image B
-        Recognition.verify(sourceImage: face1ImageView.image!,
-                           targetImages: face2ImageView.image!,
-                           // maximum threshold
-                           similarityThreshold: 0.75,
-                           processConfiguration: processConfig) {[weak self] (result) in
-            switch result {
-            case .success(let result):
-                // Remove all faces
-                self?.verifiedFacesVC?.faces.removeAll()
-                result.forEach { (match) in
-                    
-                    // Append match faces.
-                    self?.verifiedFacesVC?.faces.append(match.sourceFace)
-                    self?.verifiedFacesVC?.faces.append(match.targetFace)
-                    print(match.distance)
-                }
-                if result.isEmpty {
-                    self?.alertEmptyResults()
-                }
-                self?.verifiedFacesVC?.collectionView.reloadData()
-            case .failure(let error):
-                print(error)
-            }
-        }
+  func compare() async {
+
+    // Verify configuration
+    let processConfig = ProcessConfiguration()
+
+    // Add 0% padding on the cropped faces chip
+    processConfig.faceChipPadding = 0.0
+
+    // Use Sphere Face 5 point landmarks to align face
+    processConfig.landmarksAlignmentAlgorithm = .pointsSphereFace5
+
+    // Use facenet to encode face to 128 vector representation.
+    processConfig.faceEncoderModel = .facenet
+
+    // Verify faces from image A in image B
+    // Result contains all match faces from image A found on image B
+    let result =
+    try! await Recognition.verify(sourceImage: face1ImageView.image!,
+                                 targetImages: face2ImageView.image!,
+                                 // maximum threshold
+                                 similarityThreshold: 0.8,
+                                 processConfiguration: processConfig)
+    // Remove all faces
+    self.verifiedFacesVC?.faces.removeAll()
+    result.forEach { (match) in
+
+      // Append match faces.
+      self.verifiedFacesVC?.faces.append(match.sourceFace)
+      self.verifiedFacesVC?.faces.append(match.targetFace)
+      print(match.distance)
     }
+    if result.isEmpty {
+      self.alertEmptyResults()
+    }
+    self.verifiedFacesVC?.collectionView.reloadData()
+
+  }
     
     func presentPhotoPicker() {
         let imagePickerController = UIImagePickerController()
