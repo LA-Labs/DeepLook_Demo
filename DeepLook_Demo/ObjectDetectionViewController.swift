@@ -10,65 +10,65 @@ import DeepLook
 
 class ObjectDetectionViewController: UIViewController, UINavigationControllerDelegate {
 
-    @IBOutlet weak var detectableImage: UIImageView!
-    @IBOutlet weak var pickPhotoBtn: UIButton! {
-        didSet { pickPhotoBtn.layer.cornerRadius = 8.0
-        }
+  @IBOutlet weak var detectableImage: UIImageView!
+  @IBOutlet weak var pickPhotoBtn: UIButton! {
+    didSet { pickPhotoBtn.layer.cornerRadius = 8.0
     }
-    
-    @IBAction func pickPhotoDidTap(_ sender: UIButton) {
-        presentPhotoPicker()
-    }
-    
-    func presentPhotoPicker() {
-        let imagePickerController = UIImagePickerController()
-        imagePickerController.allowsEditing = false
-        imagePickerController.sourceType = .photoLibrary
-        imagePickerController.delegate = self
-        present(imagePickerController, animated: true, completion: nil)
-    }
-    
-    @IBOutlet weak var detectingObject: UILabel!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let image = UIImage(named: "cat")
-        detect(image: image!)
-        
-        title = "Object Detecting"
-    }
-    
-    func detect(image: UIImage) {
-        
-        // Creat new action for the detecotor.
-        // In this case object detection.
-        // Can be piped to other actions like object location, face location, etc.
-        let action = Actions.objectDetecting --> Actions.objectLocation --> Actions.faceQuality --> Actions.cropAndAlignFaces
-        Detector.analyze(action, sourceImage: image) { (result) in
-            switch result {
-            case .success(let photo):
+  }
 
-                self.detectingObject.text = photo.first?.tags.reduce("", { (result, object) -> String in
-                    if !result.isEmpty {
-                        return result + ", " + object.identifier
-                    }else {
-                        return object.identifier
-                    }
-                })
-            case .failure(_):
-                break
-            }
-        }
+  @IBAction func pickPhotoDidTap(_ sender: UIButton) {
+    presentPhotoPicker()
+  }
+
+  func presentPhotoPicker() {
+    let imagePickerController = UIImagePickerController()
+    imagePickerController.allowsEditing = false
+    imagePickerController.sourceType = .photoLibrary
+    imagePickerController.delegate = self
+    present(imagePickerController, animated: true, completion: nil)
+  }
+
+  @IBOutlet weak var detectingObject: UILabel!
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+
+    let image = UIImage(named: "cat")
+    Task {
+      await detect(image: image!)
     }
 
+    title = "Object Detecting"
+  }
+
+  func detect(image: UIImage) async {
+
+    // Create new action for the detector.
+    // In this case object detection.
+    // Can be piped to other actions like object location, face location, etc.
+    do {
+      let action: ActionType = .objectDetecting
+      let photos = try await Detector.analyze(action, sourceImage: image)
+      self.detectingObject.text = photos.first?.tags.reduce("", { (result, object) -> String in
+        if !result.isEmpty {
+          return result + ", " + object.identifier
+        }else {
+          return object.identifier
+        }
+      })
+    } catch {
+      
+    }
+  }
 }
 
 extension ObjectDetectionViewController: UIImagePickerControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any])  {
         if let tempImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            detect(image: tempImage)
+          Task {
+            await detect(image: tempImage)
             detectableImage.image = tempImage
+          }
         }
         
         self.dismiss(animated: true, completion: nil)

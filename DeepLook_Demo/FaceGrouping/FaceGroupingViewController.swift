@@ -9,6 +9,7 @@ import UIKit
 import Combine
 import DeepLook
 
+@MainActor
 class FaceGroupingViewController: UIViewController {
 
     // Outlet
