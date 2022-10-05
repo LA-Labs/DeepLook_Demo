@@ -1,9 +1,4 @@
-//
-//  FaceCollectionViewCell.swift
-//  FaceAI_Example
-//
-//  Created by Amir Lahav on 21/02/2021.
-//
+//  Copyright © 2019 la-labs. All rights reserved.
 
 import UIKit
 

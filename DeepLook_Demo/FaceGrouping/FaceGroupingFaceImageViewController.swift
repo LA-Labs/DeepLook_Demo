@@ -1,9 +1,4 @@
-//
-//  FaceGroupingFaceImageViewController.swift
-//  LookKit_Demo
-//
-//  Created by Amir Lahav on 05/03/2021.
-//
+//  Copyright © 2019 la-labs. All rights reserved.
 
 import UIKit
 import DeepLook

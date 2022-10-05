@@ -1,23 +1,23 @@
-//
-//  ViewController.swift
-//  LookKit_Demo_Local
-//
-//  Created by Amir Lahav on 23/02/2021.
-//
+//  Copyright © 2019 la-labs. All rights reserved.
 
 import UIKit
 import Combine
 import DeepLook
 
-@MainActor
 class FaceGroupingViewController: UIViewController {
 
   // Outlet
+  @IBOutlet weak var indicator: UIActivityIndicatorView! {
+    didSet {
+      indicator.isHidden = true
+      indicator.stopAnimating()
+    }
+  }
   @IBOutlet weak var progressLabel: UILabel!
   @IBOutlet weak var collectionView: UICollectionView!
 
   // Service
-  let service = LookKitService()
+  let service = DeepLookService()
 
   // Combine
   var binding = Set<AnyCancellable>()
@@ -64,6 +64,8 @@ class FaceGroupingViewController: UIViewController {
         // If we have, or the user just grant permission
         // Start clustering faces.
         Task { [self] in
+          self?.indicator.isHidden = false
+          self?.indicator.startAnimating()
           try! await self?.service.startClustering()
         }
       case .failure(let error):
@@ -72,13 +74,16 @@ class FaceGroupingViewController: UIViewController {
     }
     service.faces
       .receive(on: RunLoop.main)
-      .sink { (result) in }
-      receiveValue: { [weak self]  (faces) in
+      .sink { result in
 
-    // Clustering service just finished and update us with the new faces collection.
-    self?.faces = faces
-    self?.progressLabel.isHidden = true
-  }.store(in: &binding)
+      } receiveValue: { [weak self] faces in
+
+        // Clustering service just finished and update with the new faces collection.
+        self?.faces = faces
+        self?.progressLabel.isHidden = true
+        self?.indicator.isHidden = true
+        self?.indicator.stopAnimating()
+      }.store(in: &binding)
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -91,43 +96,41 @@ class FaceGroupingViewController: UIViewController {
 
 //MARK: UICollectionViewDataSource & UICollectionViewDelegateFlowLayout
 extension FaceGroupingViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        1
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        faces.count
-        
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? FaceCollectionViewCell else {
-            fatalError()
-        }
-        DispatchQueue.main.async {
-            cell.faceImageView.image = self.faces[indexPath.row][0].faceCroppedImage
-            cell.title.text = "\(self.faces[indexPath.row].count) Faces"
-            cell.faceImageView.layer.cornerRadius = 12
-        }
 
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header", for: indexPath) as? HeaderCollectionReusableView else {
-            fatalError()
-        }
+  func numberOfSections(in collectionView: UICollectionView) -> Int {
+    1
+  }
 
-        headerView.frame.size.height = 48
-        headerView.title.text = "Cluster ID: \(indexPath.section)"
-        return headerView
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    faces.count
+
+  }
+
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? FaceCollectionViewCell else {
+      fatalError()
     }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "selectFaces", sender: nil)
+    cell.faceImageView.image = self.faces[indexPath.row][0].faceCroppedImage
+    cell.title.text = "\(self.faces[indexPath.row].count) Faces"
+    cell.faceImageView.layer.cornerRadius = 12
+
+    return cell
+  }
+
+  func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+    guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header", for: indexPath) as? HeaderCollectionReusableView else {
+      fatalError()
     }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-            UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
-        }
+
+    headerView.frame.size.height = 48
+    headerView.title.text = "Cluster ID: \(indexPath.section)"
+    return headerView
+  }
+
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    self.performSegue(withIdentifier: "selectFaces", sender: nil)
+  }
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+  }
 }

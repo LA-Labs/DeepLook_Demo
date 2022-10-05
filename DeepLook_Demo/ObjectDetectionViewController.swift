@@ -1,9 +1,4 @@
-//
-//  ObjectDetectionViewController.swift
-//  LookKit_Demo
-//
-//  Created by Amir Lahav on 24/02/2021.
-//
+//  Copyright © 2019 la-labs. All rights reserved.
 
 import UIKit
 import DeepLook
@@ -11,10 +6,7 @@ import DeepLook
 class ObjectDetectionViewController: UIViewController, UINavigationControllerDelegate {
 
   @IBOutlet weak var detectableImage: UIImageView!
-  @IBOutlet weak var pickPhotoBtn: UIButton! {
-    didSet { pickPhotoBtn.layer.cornerRadius = 8.0
-    }
-  }
+  @IBOutlet weak var pickPhotoBtn: UIButton!
 
   @IBAction func pickPhotoDidTap(_ sender: UIButton) {
     presentPhotoPicker()
@@ -47,8 +39,9 @@ class ObjectDetectionViewController: UIViewController, UINavigationControllerDel
     // In this case object detection.
     // Can be piped to other actions like object location, face location, etc.
     do {
-      let action: ActionType = .objectDetecting
-      let photos = try await Detector.analyze(action, sourceImage: image)
+      let photos = try await Detector.analyze(
+        .objectDetecting, sourceImage: image
+      )
       self.detectingObject.text = photos.first?.tags.reduce("", { (result, object) -> String in
         if !result.isEmpty {
           return result + ", " + object.identifier

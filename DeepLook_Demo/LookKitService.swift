@@ -1,15 +1,10 @@
-//
-//  FaceAIService.swift
-//  FaceAI_Example
-//
-//  Created by Amir Lahav on 21/02/2021.
-//
+//  Copyright © 2019 la-labs. All rights reserved.
 
 import Foundation
 import DeepLook
 import Combine
 
-class LookKitService {
+class DeepLookService {
   var faces: PassthroughSubject<[[Face]], Error> = .init()
 
   func startClustering() async throws {
@@ -23,11 +18,12 @@ class LookKitService {
     let clusterOptions = ClusterOptions(minimumClusterSize: 2,
                                         numberIterations: 200,
                                         // Maximum l2 norm euclidean distance between 2 faces
-                                        faceSimilarityThreshold: 1.0)
+                                        faceSimilarityThreshold: 0.8)
 
     let processConfiguration = ProcessConfiguration()
-    processConfiguration.minimumQualityFilter = .none
+    processConfiguration.minimumQualityFilter = .low
     processConfiguration.landmarksAlignmentAlgorithm = .pointsSphereFace5
+    processConfiguration.minimumFaceArea = 6000
     processConfiguration.fetchImageSize = 800
 
 
@@ -49,6 +45,5 @@ class LookKitService {
       return faces
     }
     self.faces.send(faces)
-
   }
 }

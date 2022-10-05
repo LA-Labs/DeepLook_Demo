@@ -386,7 +386,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = DeepLook_Demo/DeepLook_Demo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TA26ND3D5C;
+				DEVELOPMENT_TEAM = 75F94K2BEH;
 				INFOPLIST_FILE = DeepLook_Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -408,7 +408,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = DeepLook_Demo/DeepLook_Demo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TA26ND3D5C;
+				DEVELOPMENT_TEAM = 75F94K2BEH;
 				INFOPLIST_FILE = DeepLook_Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -451,7 +451,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/LA-Labs/DeepLook.git";
 			requirement = {
-				branch = featue/detector;
+				branch = main;
 				kind = branch;
 			};
 		};

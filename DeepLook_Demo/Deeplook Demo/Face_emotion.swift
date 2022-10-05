@@ -1,9 +1,4 @@
-//
-//  Face_emotion.swift
-//  LookKit_Demo
-//
-//  Created by Amir Lahav on 06/04/2021.
-//
+//  Copyright © 2019 la-labs. All rights reserved.
 
 import UIKit
 import DeepLook
@@ -13,7 +8,5 @@ func facesEmotion() async {
   let image = UIImage(named: "angelina")!
   
   // Get face emotion for each face.
-  let faceEmotions = await DeepLook.faceEmotion(image)
-
-
+  let faceEmotions = DeepLook.faceEmotion(image)
 }

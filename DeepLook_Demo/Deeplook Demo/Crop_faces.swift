@@ -1,9 +1,4 @@
-//
-//  Crop_faces.swift
-//  LookKit_Demo
-//
-//  Created by Amir Lahav on 06/04/2021.
-//
+//  Copyright © 2019 la-labs. All rights reserved.
 
 import UIKit
 import DeepLook
@@ -13,7 +8,7 @@ func cropFaces() async {
   let image = UIImage(named: "angelina")!
 
   // normalized bounding box.
-  let faceLocations = await DeepLook.faceLocation(image)
+  let faceLocations = DeepLook.faceLocation(image)
 
   // Crop chip faces.
   let cropFaces = DeepLook.cropFaces(image,

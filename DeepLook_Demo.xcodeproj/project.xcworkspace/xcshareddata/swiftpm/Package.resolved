@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/LA-Labs/DeepLook.git",
       "state" : {
-        "branch" : "featue/detector",
-        "revision" : "fa040ed55e0cf89757cd783a9bcaf201db58391a"
+        "branch" : "main",
+        "revision" : "a43012c02df289dcc25e7d8ec415a65c847c0762"
       }
     },
     {
